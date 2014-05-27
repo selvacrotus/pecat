@@ -1,0 +1,213 @@
+body#bodybg{ background:/*url('../images/gray_jean.png')*/ #708090 }
+.zero_pad{ padding:0 }
+.row{ max-width:100%; min-width:750px }
+.border{ border:1px solid #ccc; }
+.wrapperDiv {   background:#FFFFFF;    margin: 0 auto;    width: 1024px; }
+
+.small { font-size: 20px; padding: 0 5px }
+.medium { font-size: 35px; padding: 0 5px}
+.large {font-size: 50px; line-height: 50px}
+.left{ float:left  !important}
+.right{ float:right  !important} 
+
+.grey{ color:#333 !important }
+.green{ color:#0C6 !important }
+.darkred{ color:#F00 !important }
+
+a:focus,img:focus,p:fpcus{ outline:none !important }
+label{ cursor:default !important }
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td{ font-size:13px }
+.button{ padding:4px 8px !important }
+a.button{ padding:5.5px 20px !important }
+.filterBtn{ padding:3px 20px !important; height:26px }
+ul li { list-style-type:none }
+.userTxt p {
+  margin-bottom: 0 !important }
+.userTxt p, .userTxt p a{ color:#333 !important }
+.userTxt p small {
+  font-size: 80%; }
+ .userTxt p b{ color:#166282}
+
+.menuDiv h4 {
+  margin-top: 10px; margin-bottom:2px }
+.menuDiv h4 a {
+  color: #888888; }
+
+.searchDiv input, .searchDiv a {
+  margin: 7px 0 0 0; }
+
+.row.containerRow { background:#fff; padding:10px; min-height:500px;  margin-bottom: 30px; }
+
+.row.containerRow > div:nth-child(n+1) {
+  padding: 0 5px 9px 5px; }
+/*
+54C571 - light green
+800080 - violet
+FA8072 - red
+*/
+a:focus{ outline:none !important } 
+.form-error{ color:#F00 }
+select.error{ border:1px solid red }
+
+.button { width: auto; background: #107bb1; border: 1px solid #107bb1; -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; color: white; cursor: pointer; display: inline-block; font-family: inherit; font-size: 13px; font-weight: bold; line-height: 1; margin: 0; padding: 10px 20px 11px; position: relative; text-align: center; text-decoration: none; -webkit-transition: background-color 0.15s ease-in-out; -moz-transition: background-color 0.15s ease-in-out; -o-transition: background-color 0.15s ease-in-out; transition: background-color 0.15s ease-in-out; /* Hovers */ /* Sizes */ /* Colors */ /* Radii */ /* Layout */ /* Disabled ---------- */ }
+.button{ margin-right:5px; width:72px  !important}
+.brdcstBtns .button{ width:84px !important }
+.button:hover, .button:focus { color: white; background-color: #12506c  }
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"]{ height:25px !important  }
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea{ padding:0 5px !important }
+
+ul.pagination li.current a{ background:#166282 !important }
+
+.cancelBtn{ background:#FA8072; border:1px solid #FA8072; }
+.cancelBtn:hover{ background:#F70D1A  }
+
+.userTxt h4{ font-weight:400 }
+
+label.error{ width:100%; float:left !important }
+input.error, select.error, textarea.error{ margin-bottom:0 !important }
+.containerRow .panel{ background:#eee !important; padding:0 0 !important }
+
+.userPic img {
+  border-radius: 100px; }
+.logoTitleDiv{ margin-top:10px }
+a.mgmLogo{ color:#fff; font-size:22px; font-weight:500; }
+.panel{ background:#fff !important; margin-bottom:5px; border:none; border-bottom:1px groove #E6E6E6 }
+.panel, .taskInfoDiv, .taskInfoHeaderDiv{ padding:0.25em !important }
+.headerDiv{ }
+
+.rd_footerDivrow{ background:#4d4e32 }
+.footerCntDiv{ padding-top:5px; padding-bottom:5px }
+.footer_ul{ margin-left:0 }
+.footer_ul li a{ font-size:.9em; color:#fafafa }
+
+.customSelect{ margin-bottom:10px; padding:3px; border:1px solid #ccc }
+.ui-widget{ font-size:.9em !important; position:relative; z-index:999 !important}
+
+.box{ box-shadow:0 0 3px #ccc }
+.tblContainer{ overflow-x:auto; overflow-y:hidden; margin:10px 0}
+table{ width:100% }
+table th{ background:#708090; color:#fff !important }
+table th a{ color:#fff !important }
+table tr:nth-child(2n){ background:#EBEBEB }
+/*table tr th:first-child, table tr td:first-child{ width:200px !important }
+table tr th, table tr td{ width:70px !important }*/
+
+.invokeBtn{ margin-top:3px }
+.searchFilter div select{}
+.searchFilter div label{ font-weight:600 }
+.searchFilter div label, .searchFilter div input{ display:inline-block }
+.historyDiv h5{ margin-top:0 }
+
+.menuDiv ul{ margin-bottom:0; padding:10px 0; border-bottom:0px solid #ccc }
+.menuULLI { text-align:right }
+.menuULLI li{ display:inline-block; border-right:1px solid #ccc; }
+.menuULLI li:last-child{ border:none !important }
+.menuULLI li a{ padding:10px 15px; color:#eee !important   }
+
+.menuULLI li a:hover, .menuULLI li a.active{ color:#fff !important  }
+
+.roleDiv{ line-height:1.8em }
+.fieldsDiv{ border-left:1px solid #ccc }
+.marksFld input{ width:50px !important  }
+.categoryDiv{ padding:0 5px }
+.categoryDiv .panel{ background:#FA8072 !important; margin-bottom:5px }
+.categoryDiv h5, .footer_ul li{ color:#fff }
+.ul_goals_main h6{ margin-top:0; font-weight:500 }
+.ul_goals_main li a{ padding-left:5px !important; }
+.ul_goals li { margin-left:0px; cursor:pointer; }
+.ul_goals li:hover{ color:#4682B4 }
+.txtArea{  position:relative; z-index:1 }
+
+a.addNew{ color:#fff !important; font-size:13px; padding:0 5px; }
+a.addNewDT{ color:#fff !important; font-size:13px; padding:5px; position:relative; top:7px}
+
+.employeeForm > div {    float: none;    margin: 0 auto }
+.employeeForm h5, .colorHbg h5{ background:#708090; margin-top:0; color:#fff; padding:7px 5px }
+
+.genderRadio div{ display:inline-block }
+.tabs dd.active, .tabs li.active{ border-top:3px solid #de3f05 }
+.tprogs p:hover, .tprogs p a:hover{ color:#DE3F05 !important  }
+.tabs dd a:focus, .tabs li a:focus { font-weight: bold; color: #222; }
+
+.kpitbl input[type=radio]{ margin-left:0 }
+.kpitbl tbody tr td, .kpitbl thead tr th{ padding:4px 10px }
+
+.legendFld{ background:#F4F0D4; padding:10px; margin-bottom:10px; }
+.legendFld h6{ margin-top:0 }
+.legendFld ul{  margin-left:0; }
+.legendFld ul li{ display:block; padding:0 10px 0 0;  }
+
+.kpiList ul li{ list-style-type:square; cursor:pointer }
+
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 45%; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; padding: 0 5px 0 0; }
+.ui-timepicker-rtl dl dt{ float: right; clear: right; }
+.ui-timepicker-rtl dl dd { margin: 0 45% 10px 10px; }
+.ui-datepicker{ width:19em }
+.ui-slider-handle{ background:#D95229 !important }
+
+.roadMap1{ margin-top:10px }
+.qaDivs ul li{ list-style:square; font-weight:600}
+ul.answersUL li{ list-style-type:decimal !important;  font-weight:400 !important}
+.qaResultDiv ul.answersUL li{ list-style-type:none !important;  font-weight:400 !important}
+.qaFormDiv ul.answersUL li{ margin-left:20px }
+
+.popupDataDiv{ background:#fff; padding:10px }
+.popupDataDiv table th{ padding:5px !important }
+.popupDataDiv input{ position:relative; z-index:9 }
+#sb-body-inner{ background:#fff }
+.ranswt input.weight, .ranswt input.total{ width:50px !important }
+
+.responsiveTbl{ width:100%; overflow-x:auto }
+
+.personalInfoDiv table, .orgInfoDiv table{ border:0 }
+.userContainer h5{ font-size:21px; font-weight:400 }
+
+.date{ font-size:30px; margin-bottom:0 }
+.mYear{ font-size:15px; margin-bottom:0 }
+.calTrainingList{ margin-bottom: 1px; }
+.calTrainingList p{ color:#fff }
+.callistDiv p{ color:#222 }
+.datesDiv{ background:#038CB9 }
+.calTrainingList{ background:#F5F2DA}
+.calTrainingList:nth-child(2n){ background:#F5F2DA }
+.commnetsFld  fieldset{ margin-top:0; padding:5px; }
+.commnetsFld  fieldset textarea, .kpitbl input[type=text]{ margin-bottom:0 }
+
+.trainingAccTbls table th{ padding:5px 0 5px 10px }
+.marginLeft10{ margin-left:10px }
+
+.specialisationUL ul.square li{ list-style-type:square !important }
+.ms-container, .btn{ margin-bottom:10px !important }
+
+.empList h5{ margin:0 0 5px 0 !important }
+.empListTbl table tr th{ background:#4D4E32 !important; color:#fff !important }
+
+.multiselect-container input[type=radio]{}
+.agencyDrop select, .select90{ width:88% !important; margin-right:2px  }
+
+
+table.jtable tr th{ background:none !important }
+table.jtable tr th:last-child{ float:left !important }
+.loadRecrdBtn{ height:26px !important }
+.empTblDiv{ background:#708090; box-shadow:0 1px 2px #333; position:relative; z-index:1}
+.empTblDiv h5{ margin:5px 0 5px 5px; color:#fff !important; font-weight:normal; font-size:18px !important  }
+.sampleImg { position: absolute; top: 0 }
+
+.menuDiv{ background:#4B5B6B }
+
+.personalInfoImg{ padding:0; border:1px solid #ddd !important; width:50px   }
+.popupDataDiv table{ border:none !important }
+#accreditationTab h5, #ongoingTrainingTab{ margin-top:0  }
+.tabs { margin-bottom:10px !important }
+.accordion div.content{ display:inline-block; float:none !important }
+.hbg{ margin-bottom:10px; background:#4B5B6B }
+.hbg div h5{ color:#fff !important; padding:0 10px }

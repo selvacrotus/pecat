@@ -1,0 +1,19 @@
+@media only screen and (min-width:720px) and (max-width: 767px) {
+	/*.testsDiv .column, .testsDiv .columns { width: 33.3333% !important; float: left !important; }*/
+	.testsDiv div{ float:left !important }
+	.qasDiv div{ width:33.3333%!important; float:left }
+	.ranswt input.weight, .ranswt input.total{ width:auto !important }
+	.orgTabRes label{ width:200px !important }
+	.orgTabRes .six.columns{ width:30% !important }
+	.hideformediumdown{ display:none !important }  
+	}
+@media only screen and (min-width:768px) and (max-width:1040px){
+	.wrapperDiv, .row{ width:100% !important }
+	.userTxt h4{ font-size:19px; margin-top:-4px }
+	#login_box{ width:41% !important }
+	.forgotPwd-box { width:50% !important }
+	/*#personalTab>div{ padding:0 }*/
+	.tabs dd a, .tabs li a{ padding:0 14px !important }
+	.agencyDrop select, .select90{ width:82% !important }
+	.multiSelDiv div .ms2side__select select{ width:129px !important }
+}

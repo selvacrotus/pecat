@@ -1,0 +1,489 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]-->
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/shadowbox.css" />
+<link rel="stylesheet" href="../css/multi-select.css">
+<link rel="stylesheet" href="../css/vallenato.css">
+<link rel="stylesheet" href="../css/customstyle.css" />
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.foundation.tabs.js"></script>
+<script src="../js/shadowbox.js"></script>
+<script src="../js/jquery.multi-select.js"></script>
+<script src="../js/jquery.quicksearch.js"></script>
+<script src="../js/jquery.form-validator.js"></script>
+<script src="../js/vallenato.js"></script>
+<script src="../js/functions.js"></script>
+</head>
+<body id="bodybg">
+<div class="wrapperDiv">
+	<div class="row headerRow">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="twelve logoTitleDiv columns left zero_pad">
+                    <a href="index.html" class="mgmLogo" id="showLeftPush"><img src="../images/CrotusLogo.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt"><br/><br/>
+                    <p class="eleven columns">Welcome <b>Tom Smith </b>
+                    <br/><small>Thu Mar 11, 2014</small>&nbsp;|&nbsp;<a href="../login.html">Logout</a>
+                    </p>
+                    <p class="one columns zero_pad"><img src="../images/user.jpg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="twelve columns right menuDivTop">
+            <div class="twelve columns zero_pad menuDiv">
+                <ul class="menuULLI">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="kpi.html">KPI</a></li>
+                  <li><a href="training.html" class="active">Training</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	<div class="row containerRow">
+    	<div class="twelve columns employeesTblDiv">
+            <div class="twelve columns summaryForm ">
+            	
+                <form name="trainingForm" id="trainingForm" method="post" action="#" class="formStyle" enctype="multipart/form-data">
+                <dl class="tabs">
+                  <dd class="active"><a href="#manageTraining">Manage Training</a></dd>
+                  <dd><a href="#trainingEvent">Accreditation</a></dd>
+                  <dd><a href="#broadcast">Broadcast</a></dd>
+                </dl>
+            
+            	<ul class="tabs-content">
+                	<li class="active" id="manageTrainingTab">
+            			<div class="twelve columns zero_pad">
+                          <div class="twelve columns zero_pad">
+                            <div id="accordion-container"> 
+                             <h2 class="accordion-header">Heirarchy Filter</h2> 
+                             <div class="accordion-content">    
+                                <div class="twelve columns zero_pad">
+                                    <label class="two columns ">Specialisation</label>
+                                    <select name="" class="two columns zero_pad customSelect left">
+                                        <option value="">Perfume</option>
+                                        <option value="">Selling Skills</option>
+                                    </select>
+                                    
+                                    <label class="two columns ">Accreditation</label>
+                                    <select name="" class="two columns zero_pad customSelect left">
+                                        <option value="">Attendance</option>
+                                        <option value="">Group</option>
+                                        <option value="">Individual</option>
+                                        <option value="">Gold</option>
+                                        <option value="">Silver</option>
+                                    </select>
+                                    
+                                    <!--<label class="two columns ">Sales Heirarchy</label>
+                                    <select name="" class="two columns zero_pad customSelect left">
+                                        <option value="">L4</option>
+                                        <option value="">L3</option>
+                                        <option value="">L2</option>
+                                        <option value="">L1</option>
+                                    </select>-->
+                                </div>
+                                <div class="twelve columns zero_pad orgMapDiv">
+                                  <div class="twelve columns zero_pad">    
+                                      <label class="two columns">Global: </label>
+                                      <select name="" class="customSelect two columns left">
+                                          <option value="">Select</option>
+                                          <option value="">QCG Global</option>
+                                      </select>
+                                      
+                                      <label class="two columns">Region: </label>
+                                      <select name="" class="customSelect two columns left">
+                                          <option value="">Select</option>
+                                          <option value="">Europe</option>
+                                          <option value="">North America</option>
+                                          <option value="">Asia</option>
+                                      </select>
+                                      
+                                      <label class="two columns">Country/Market: </label>
+                                      <select name="" class="customSelect two columns left">
+                                          <option value="">Select</option>
+                                          <option value="">France</option>
+                                          <option value="">UK</option>
+                                      </select>
+                                      
+                                      <label class="two columns">Channel: </label>
+                                      <select name="" class="customSelect two columns left">
+                                          <option value="">Select</option>
+                                          <option value="">Travel</option>
+                                          <option value="">In-Store</option>
+                                      </select>
+                                      
+                                      <label class="two columns">Hub: </label>
+                                      <select name="" class="customSelect two columns left">
+                                          <option value="">Select</option>
+                                          <option value="">Heathrow T5</option>
+                                          <option value="">Heathrow T4</option>
+                                          <option value="">Heathrow T3</option>
+                                          <option value="">Heathrow T2</option>
+                                          <option value="">Heathrow T1</option>
+                                      </select>
+                                      
+                                      <label class="two columns">Location: </label>
+                                      <select name="" class="customSelect two columns left">
+                                          <option value="">Select</option>
+                                          <option value="">T5 Departures</option>
+                                          <option value="">T5 Arrivals</option>
+                                      </select>
+                                 </div>
+                                 <div class="twelve columns zero_pad">    
+                                      <label class="two columns">Sub-Location: </label>
+                                      <select name="" class="customSelect two columns left">
+                                          <option value="">Select</option>
+                                          <option value="">Departure Lounge</option>
+                                          <option value="">Departure Gates 5-25</option>
+                                      </select>
+                                 </div>
+                                 
+                                 <div class="twelve columns zero_pad"> 
+                                    <label class="two columns">&nbsp; </label>
+                                    <input type="submit" name="submit" class="button one columns zero_pad left" value="Filter">
+                                    <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='training.html'" value="Reset">
+                                 </div>
+                                </div>
+                             </div>
+                             <h2 class="accordion-header">Manage Training</h2> 
+                             <div class="accordion-content">       
+                                <div class="twelve columns zero_pad">
+                                    <div class="two columns zero_pad">
+                                      <label class="twelve columns ">My Team</label>
+                                    </div>
+                                    <div class="six left columns zero_pad">
+                                      <select name="emp[]" multiple class="two columns zero_pad customSelect left multiSelect" data-validation="required">
+                                          <option value="emp1">Person 1</option>
+                                          <option value="emp2">Person 2</option>
+                                          <option value="emp3">Person 3</option>
+                                          <option value="emp4">Person 4</option>
+                                          <option value="emp5">Person 5</option>
+                                      </select>
+                                   </div>
+                                  </div>
+                                  
+                                <div class="twelve columns zero_pad">
+                                    <label class="two columns ">Training Event</label>
+                                    <select name=""  class="three columns zero_pad customSelect left">
+                                        <option value="">Event 1</option>
+                                        <option value="">Event 2</option>
+                                        <option value="">Event 3</option>
+                                        <option value="">Event 4</option>
+                                        <option value="">Event 5</option>
+                                    </select>
+                                </div>
+                                <div class="twelve columns zero_pad">
+                                    <label class="two columns">&nbsp;</label>
+                                    <input type="button" name="submit" class="button one columns zero_pad left" value="Save" onClick="sendMail()">
+                                    <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='training.html'" value="Cancel">
+                                </div>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                	</li>
+                    
+                    <li id="trainingEventTab">
+                    	<div class="twelve columns zero_pad">
+                        	<div class="six columns zero_pad">    
+                                <div class="four columns  left">
+                                <label>Training Event: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                <select name="" class="customSelect" data-validation="required">
+                                    <option value="">Select</option>
+                                    <option value="">Event 1</option>
+                                    <option value="">Event 2</option>
+                                    <option value="">Event 3</option>
+                                    <option value="">Event 4</option>
+                                    <option value="">Event 5</option>
+                                </select>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="twelve columns zero_pad">
+                            <div class="two columns zero_pad">
+                              <label class="twelve columns ">Sales Team:</label>
+                            </div>
+                            <div class="six left columns zero_pad">
+                              <select name="emp[]" multiple class="three columns zero_pad customSelect left multiSelect" data-validation="required">
+                                  <option value="emp1">Person 1</option>
+                                  <option value="emp2">Person 2</option>
+                                  <option value="emp3">Person 3</option>
+                                  <option value="emp4">Person 4</option>
+                                  <option value="emp5">Person 5</option>
+                              </select>
+                           </div>
+                        </div>
+                        <div class="twelve columns zero_pad">
+                            <div class="six columns zero_pad">    
+                                <div class="four columns  left">
+                                <label>Assign Accreditation: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                <select name="" class="customSelect" data-validation="required">
+                                    <option value="">Select</option>
+                                    <option value="1">Intermediate</option>
+                                    <option value="2">Advanced</option>
+                                    <option value="3">Expert</option>
+                                    <option value="4">Trainer</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="twelve columns zero_pad">
+                            <div class="six columns zero_pad">    
+                                <div class="four columns  left">
+                                <label>Level: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                <select name="" class="customSelect" data-validation="required">
+                                    <option value="">Select</option>
+                                    <option value="1">Level 1</option>
+                                    <option value="2">Level 2</option>
+                                    <option value="3">Level 3</option>
+                                    <option value="4">Level 4</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="twelve columns zero_pad">
+                             <div class="six columns zero_pad">    
+                                <div class="four columns  left">
+                                <label>&nbsp;</label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                <input type="submit" name="submit" class="button one columns zero_pad left" value="Save">
+                                <input type="button" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='index.html'" value="Cancel">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li id="broadcastTab">
+                       <div id="accordion-container2"> 
+                       <h2 class="accordion-header">Heirarchy Filter</h2>
+                       <div class="accordion-content">
+                           <div class="twelve columns zero_pad">
+                              <label class="two columns ">Specialisation</label>
+                              <select name="" class="two columns zero_pad customSelect left">
+                                  <option value="">Perfume</option>
+                                  <option value="">Selling Skills</option>
+                              </select>
+                              
+                              <label class="two columns ">Accreditation</label>
+                              <select name="" class="two columns zero_pad customSelect left">
+                                  <option value="">Attendance</option>
+                                  <option value="">Group</option>
+                                  <option value="">Individual</option>
+                                  <option value="">Gold</option>
+                                  <option value="">Silver</option>
+                              </select>
+                          </div>
+                      
+                          <div class="twelve columns zero_pad orgMapDiv">
+                            <div class="twelve columns zero_pad">    
+                                <label class="two columns">Global: </label>
+                                <select name="" class="customSelect two columns left">
+                                    <option value="">Select</option>
+                                    <option value="">QCG Global</option>
+                                </select>
+                                
+                                <label class="two columns">Region: </label>
+                                <select name="" class="customSelect two columns left">
+                                    <option value="">Select</option>
+                                    <option value="">Europe</option>
+                                    <option value="">North America</option>
+                                    <option value="">Asia</option>
+                                </select>
+                                
+                                <label class="two columns">Country/Market: </label>
+                                <select name="" class="customSelect two columns left">
+                                    <option value="">Select</option>
+                                    <option value="">France</option>
+                                    <option value="">UK</option>
+                                </select>
+                                
+                                <label class="two columns">Channel: </label>
+                                <select name="" class="customSelect two columns left">
+                                    <option value="">Select</option>
+                                    <option value="">Travel</option>
+                                    <option value="">In-Store</option>
+                                </select>
+                                
+                                <label class="two columns">Hub: </label>
+                                <select name="" class="customSelect two columns left">
+                                    <option value="">Select</option>
+                                    <option value="">Heathrow T5</option>
+                                    <option value="">Heathrow T4</option>
+                                    <option value="">Heathrow T3</option>
+                                    <option value="">Heathrow T2</option>
+                                    <option value="">Heathrow T1</option>
+                                </select>
+                                
+                                <label class="two columns">Location: </label>
+                                <select name="" class="customSelect two columns left">
+                                    <option value="">Select</option>
+                                    <option value="">T5 Departures</option>
+                                    <option value="">T5 Arrivals</option>
+                                </select>
+                           </div>
+                           <div class="twelve columns zero_pad">    
+                                <label class="two columns">Sub-Location: </label>
+                                <select name="" class="customSelect two columns left">
+                                    <option value="">Select</option>
+                                    <option value="">Departure Lounge</option>
+                                    <option value="">Departure Gates 5-25</option>
+                                </select>
+                           </div>
+                           
+                           <div class="twelve columns zero_pad"> 
+                              <label class="two columns">&nbsp; </label>
+                              <input type="submit" name="submit" class="button one columns zero_pad left" value="Filter">
+                              <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='training.html'" value="Reset">
+                           </div>
+                          </div>
+                      </div>
+                      
+                      <h2 class="accordion-header">Broadcast Training</h2>
+                      <div class="accordion-content">
+                          <div class="twelve columns zero_pad">   
+                              <div class="six columns zero_pad">    
+                                    <div class="four columns  left">
+                                    <label>Training Event: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="1">Event 1</option>
+                                        <option value="2">Event 2</option>
+                                        <option value="3">Event 3</option>
+                                        <option value="4">Event 4</option>
+                                        <option value="5">Event 5</option>
+                                    </select>
+                                    </div>
+                              </div>
+                          </div>
+                      
+                          <div class="twelve columns zero_pad">
+                            <div class="two columns zero_pad">
+                              <label class="twelve columns ">My Team</label>
+                            </div>
+                            <div class="six left columns zero_pad">
+                              <select name="emp[]" multiple class="two columns zero_pad customSelect left multiSelect" data-validation="required">
+                                  <option value="emp1">Person 1</option>
+                                  <option value="emp2">Person 2</option>
+                                  <option value="emp3">Person 3</option>
+                                  <option value="emp4">Person 4</option>
+                                  <option value="emp5">Person 5</option>
+                              </select>
+                           </div>
+                          </div>
+                          
+                          <div class="twelve columns zero_pad">
+                              <div class="six columns zero_pad">    
+                                  <div class="four columns  left">
+                                  <label>&nbsp;</label>
+                                  </div>
+                                  <div class="six columns zero_pad left">
+                                  <input type="button" name="submit" class="button one columns zero_pad left" value="Broadcast" onClick="sendMail()">
+                                  <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='training.html'" value="Cancel">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                    </li>
+                </ul>
+            	
+                
+                </form>
+            </div>
+        </div>
+    </div><!--containerRow End-->
+    
+    <div class="row rd_footerDivrow">
+        <div class="twelve columns footerCntDiv">
+            <ul class="footer_ul">
+                    <li class="left">&copy; <a href="javascript:void(0)" target="_new">Quadrant Consulting Group </a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript">
+	$(document).foundationTabs();
+	$(document).ready(function(){
+		Shadowbox.init({
+			modal: true
+			});
+		$.validate();
+	})
+	$('.multiSelect').multiSelect({
+			selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+		  selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+		  afterInit: function(ms){
+			var that = this,
+				$selectableSearch = that.$selectableUl.prev(),
+				$selectionSearch = that.$selectionUl.prev(),
+				selectableSearchString = '.'+that.$container.attr('class')+' .ms-elem-selectable:not(.ms-selected)',
+				selectionSearchString = '.'+that.$container.attr('class')+' .ms-elem-selection.ms-selected';
+		
+			that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+			.on('keydown', function(e){
+			  if (e.which === 40){
+				that.$selectableUl.focus();
+				return false;
+			  }
+			});
+		
+			that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+			.on('keydown', function(e){
+			  if (e.which == 40){
+				that.$selectionUl.focus();
+				return false;
+			  }
+			});
+		  },
+		    afterSelect: function(values){
+				//$('.selectedVal').append(values+',');
+				this.qs1.cache();
+    			this.qs2.cache();
+		  	},
+			afterDeselect: function(){
+				this.qs1.cache();
+				this.qs2.cache();
+			  }
+		});
+	function sendMail(){
+		//if($.validate()){
+		Shadowbox.open({
+			content:    'mail.html',
+			player:     "iframe",
+			title:      "",
+			height:     500,
+			width:      700
+			});
+		}
+		//}
+</script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]--> 
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/shadowbox.css" />
+<link rel="stylesheet" href="../css/fullcalendar.css" />
+<link rel="stylesheet" href="../css/jquery.dataTables.css" />
+<link rel="stylesheet" href="../css/customstyle.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.foundation.tabs.js"></script>
+<script src="../js/shadowbox.js"></script>
+<script src="../js/jquery.treeview.js"></script>
+<script src="../js/jquery.dataTables.min.js"></script>
+<script src="../js/functions.js"></script>
+<script src="../js/fullcalendar.js"></script>
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script type="text/javascript">
+$(document).ready(function(){ 
+	
+	Shadowbox.init();
+	
+	if($(window).innerWidth() < 780){
+		$('.ipadRes').attr("rel","shadowbox;width="+parseInt($(window).innerWidth() - 20)+";height="+parseInt($(window).innerHeight()	- 150)+"");
+	}
+	$(window).resize(function(){   
+			$('.ipadRes').attr("rel","shadowbox;width="+parseInt($(window).innerWidth() - 20)+";height="+parseInt($(window).innerHeight()	- 150)+"");
+	});
+});
+
+</script>
+</head>
+<body id="bodybg">
+<div class="wrapperDiv">
+	<div class="row headerRow">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="twelve logoTitleDiv columns left zero_pad">
+                    <a href="index.html" class="mgmLogo" id="showLeftPush"><img src="../images/CrotusLogo.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt"><br/><br/>
+                    <p class="eleven columns">Welcome <b><a href="profile.html" class="" rel="shadowbox;width=700;height=550">Tom Smith</a> </b>
+                    <br/><small>Thu Mar 11, 2014</small>&nbsp;|&nbsp;<a href="../login.html">Logout</a>
+                    </p>
+                    <p class="one columns zero_pad"><img src="../images/user.jpg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="twelve columns right menuDivTop">
+            <div class="twelve columns zero_pad menuDiv">
+                <ul class="menuULLI">
+                  <li><a href="index.html" class="active">Home</a></li>
+                  <li><a href="kpi.html">KPI</a></li>
+                  <li><a href="training.html">Training</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+
+	<div class="row containerRow userContainer">
+    	<div class="twelve columns">
+            <dl class="tabs">
+                <dd class="active"><a href="#emps">My Team</a></dd>
+                <dd><a href="#cal" onClick="showCalendar()">Training Calendar</a></dd>
+            </dl>
+            
+            <ul class="tabs-content">
+              	<li class="active" id="empsTab">
+              	<div class="twelve columns zero_pad">
+                    <div class="twelve columns employeesTblDiv zero_pad">
+                        <div class="twelve columns zero_pad empTblDiv">
+                            <div class="six columns zero_pad">
+                                <h5>My Team</h5>
+                            </div>
+                            
+                        </div>
+                        <div class="twelve columns zero_pad">
+                            <div class="responsiveTbl">
+                            <table cellpadding="0" cellspacing="0" class="" id="emplListTbl">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Sub Location</th>
+                                    <th>Hub</th>
+                                    <th>Country</th>
+                                    <th>Region</th>
+                                    <th>Agency</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Nick Hogendijk</td>
+                                    <td>Departures</td>
+                                    <td>T1</td>
+                                    <td>Sydney Airport</td>
+                                    <td>Australia</td>
+                                    <td>Asia</td>
+                                    <td>Nuance</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Josh</td>
+                                    <td>Departures</td>
+                                    <td>T5</td>
+                                    <td>Heathrow</td>
+                                    <td>England</td>
+                                    <td>Europe</td>
+                                    <td>WDFG</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Mike Doe</td>
+                                    <td>Arrivals</td>
+                                    <td>T3</td>
+                                    <td>Heathrow</td>
+                                    <td>England</td>
+                                    <td>Europe</td>
+                                    <td>WDFG</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Sally Doe</td>
+                                    <td>Down Town</td>
+                                    <td>Galleria</td>
+                                    <td>Singapore</td>
+                                    <td>Singapore</td>
+                                    <td>Asia</td>
+                                    <td>DFS</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>Departures</td>
+                                    <td>T1</td>
+                                    <td>Sydney Airport</td>
+                                    <td>Australia</td>
+                                    <td>Asia</td>
+                                    <td>Nuance</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Raiyan</td>
+                                    <td>T1 Departures</td>
+                                    <td>Mumbai Airport</td>
+                                    <td>Mumbai Airport</td>
+                                    <td>India</td>
+                                    <td>Asia</td>
+                                    <td>Flamingo</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Nick</td>
+                                    <td>Departures</td>
+                                    <td>T8</td>
+                                    <td>JFK</td>
+                                    <td>USA</td>
+                                    <td>AMS</td>
+                                    <td>WDFG</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Nick Hogendijk</td>
+                                    <td>Departures</td>
+                                    <td>T1</td>
+                                    <td>Sydney Airport</td>
+                                    <td>Australia</td>
+                                    <td>Asia</td>
+                                    <td>Nuance</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Josh</td>
+                                    <td>Departures</td>
+                                    <td>T5</td>
+                                    <td>Heathrow</td>
+                                    <td>England</td>
+                                    <td>Europe</td>
+                                    <td>WDFG</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Mike Doe</td>
+                                    <td>Arrivals</td>
+                                    <td>T3</td>
+                                    <td>Heathrow</td>
+                                    <td>England</td>
+                                    <td>Europe</td>
+                                    <td>WDFG</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Sally Doe</td>
+                                    <td>Down Town</td>
+                                    <td>Galleria</td>
+                                    <td>Singapore</td>
+                                    <td>Singapore</td>
+                                    <td>Asia</td>
+                                    <td>DFS</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>Departures</td>
+                                    <td>T1</td>
+                                    <td>Sydney Airport</td>
+                                    <td>Australia</td>
+                                    <td>Asia</td>
+                                    <td>Nuance</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Raiyan</td>
+                                    <td>T1 Departures</td>
+                                    <td>Mumbai Airport</td>
+                                    <td>Mumbai Airport</td>
+                                    <td>India</td>
+                                    <td>Asia</td>
+                                    <td>Flamingo</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Nick</td>
+                                    <td>Departures</td>
+                                    <td>T8</td>
+                                    <td>JFK</td>
+                                    <td>USA</td>
+                                    <td>AMS</td>
+                                    <td>WDFG</td>
+                                    <td>
+                                        <a href="additional_info.html"  class="ipadRes"  rel="shadowbox;width=950;height=400"><span class="fi-results-demographics small"></span></a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+              </li>
+				
+                <li id="calTab">
+                	<div class="twelve columns zero_pad">
+                        <div class="twelve columns right zero_pad roadMap1" id="calendar"></div>
+                    </div>
+                </li>
+			              
+           </ul>
+        </div>
+    </div><!--containerRow End-->
+    
+    <div class="row rd_footerDivrow">
+        <div class="twelve columns footerCntDiv">
+            <ul class="footer_ul">
+                    <li class="left">&copy; <a href="javascript:void(0)" target="_new">Quadrant Consulting Group </a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript">
+	$(document).foundationTabs();
+	function showCalendar(){ 
+		window.setTimeout( function(){ $('.fc-button-today').click() }, 100);
+	}
+		
+	$(document).ready(function(){
+		Shadowbox.init();
+		$('#emplListTbl').dataTable({
+			"lengthMenu": [[15, 25, 50, -1], [15, 25, 50, "All"]]
+			});
+		
+		$('#calendar').fullCalendar({
+			events: [
+				{
+					title  : 'PECAT training',
+					start  : '2014-05-14 09:00:00',
+					allDay : false // will make the time show
+				},
+				{
+					title  : 'Sales Meeting with Reebok',
+					start  : '2014-05-15',
+					//allDay : false // will make the time show
+				},
+				{
+					title  : 'Sales Meeting with Reebok',
+					start  : '2014-05-16',
+					//allDay : false // will make the time show
+				},
+				{
+					title  : 'Sales Meeting with Reebok',
+					start  : '2014-05-17 10:00:00',
+					allDay : false // will make the time show
+				},
+				{
+					title  : 'New VAT traning',
+					start  : '2014-05-20 12:30:00',
+					allDay : false, // will make the time show
+				}
+			],
+			defaultView: 'month',
+			timeFormat: 'h(:mm) tt',
+			editable: true,
+			eventColor: '#F6F3E0',
+			eventTextColor: '#222',
+			header: {
+				left:   'today prev,next,prevYear,nextYear',
+				center: 'title',
+				right:  'month,agendaWeek,agendaDay'
+			},
+			columnFormat: {	month: 'dddd', week: 'ddd d MMM ', day: 'dddd d MMM ' },
+			formatDate: 'Y-m-d h:i',
+			contentHeight: 400,
+		});
+	})
+</script>
+</body>
+</html>

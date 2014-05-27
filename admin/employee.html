@@ -1,0 +1,605 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <![endif]
+<head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]--> 
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/shadowbox.css" />
+<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../css/customstyle.css" />
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.foundation.tabs.js"></script>
+<script src="../js/jquery.form-validator.js"></script>
+<script src="../js/shadowbox.js"></script>
+<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css"/>
+<script src="../js/functions.js"></script>
+<script type="text/javascript">
+	$(function() { 
+		Shadowbox.init();
+		$.validate();
+    });
+</script>
+</head>
+<body id="bodybg">
+<div class="wrapperDiv">
+	<div class="row headerRow">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="twelve logoTitleDiv columns left zero_pad">
+                    <a href="index.html" class="mgmLogo" id="showLeftPush"><img src="../images/CrotusLogo.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt"><br/><br/>
+                    <p class="eleven columns">Welcome <b>Admin </b>
+                    <br/><small>Thu Mar 11, 2014</small>&nbsp;|&nbsp;<a href="../login.html">Logout</a>
+                    </p>
+                    <p class="one columns zero_pad"><img src="../images/user.jpg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="twelve columns right menuDivTop">
+            <div class="twelve columns zero_pad menuDiv">
+                <ul class="menuULLI">
+                    <li><a href="index.html" class="active">Employee</a></li>
+                    <li><a href="kpi.html">KPI</a></li>
+                    <li><a href="training.html">Training</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	<div class="row containerRow">
+    	<div class="twelve columns employeesTblDiv">
+            <div class="twelve columns employeeForm zero_pad">
+            	<form name="empForm" id="empForm" action="" method="post" class="formStyle" enctype="multipart/form-data">
+                <dl class="tabs">
+                  <dd class="active"><a href="#personal">Personal Info</a></dd>
+                  <dd><a href="#org">Organization Mapping</a></dd>
+				  <dd><a href="#accreditation">Accreditation</a></dd>
+                </dl>
+                
+                <ul class="tabs-content">
+                  <li class="active" id="personalTab">
+                      <div class="twelve columns">
+                      	<div class="twelve columns zero_pad">
+                        	<div class="six columns zero_pad">
+                                <div class="four columns left zero_pad">
+                                    <label>LDAP: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                    <select name="ldap_list" id="ldap_list" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="lu1">User 1</option>
+                                        <option value="lu2">User 2</option>
+                                        <option value="lu3">User 3</option>
+                                        <option value="lu4">User 4</option>
+                                        <option value="lu5">User 5</option>
+                                    </select>
+                                </div>
+                        	</div>
+                        </div>
+                        <div class="twelve columns zero_pad">
+                            <div class="six columns zero_pad">
+                                <div class="four columns zero_pad">
+                                    <label>Name: </label>
+                                </div>
+                                <div class="six  columns zero_pad left">
+                                    <input type="text" placeholder="eg: josh" name="emp_name" id="emp_name" data-validation="required" >
+                                </div>
+                            </div>
+                            <div class="six columns zero_pad">    
+                                <div class="four columns zero_pad left">
+                                <label>Surname: </label>
+                                </div>
+                                <div class="six  columns zero_pad left">
+                                <input type="text" name="emp_surname" placeholder="eg: doe" id="emp_surname" data-validation="required">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                            <div class="six columns zero_pad">
+                                <div class="four columns zero_pad">
+                                    <label>Gender: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                    <input type="radio"  class="" name="emp_gender" checked id="emp_gender">Male
+                            		<input type="radio"  class="" name="emp_gender" id="emp_gender">&nbsp;Female
+                                </div>
+                            </div>
+                            <div class="six columns zero_pad">    
+                                <div class="four columns zero_pad left">
+                                <label>Country: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                <select name="country_list" id="country_list" class="customSelect" data-validation="required">
+                                    <option value="">Select</option>
+                                    <option value="uk">UK</option>
+                                    <option value="gr">German</option>
+                                    <option value="pt">Portugal</option>
+                                    <option value="es">Spain</option>
+                                    <option value="nr">Norway</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                            <div class="six columns zero_pad">
+                                <div class="four columns zero_pad">
+                                    <label>Email: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                    <input type="text" class="" placeholder="eg: email@domain.com" name="emp_email" id="emp_email" data-validation="email">
+                                </div>
+                            </div>
+                            <div class="six columns zero_pad">    
+                                <div class="four columns zero_pad left">
+                                <label>Agency: </label>
+                                </div>
+                                <div class="six columns zero_pad left agencyDrop">
+                                <select name="agency_list" id="agency_list" class="customSelect left" data-validation="required">
+                                    <option value="">Select</option>
+                                    <option value="1">Nuance</option>
+                                    <option value="2">WDFG</option>
+                                    <option value="3">DFS</option>
+                                    <option value="4">Flamingo</option>
+                                </select>
+                                <a href="add_agency.html" class="" title="Add" rel="shadowbox;width=500;height=200"><span class="fi-plus"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                            <div class="six columns zero_pad">
+                                <div class="four columns zero_pad">
+                                    <label>Joining Date: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                    <input type="text" class="" placeholder="eg: xxxx-xx-xx" name="emp_joining_date" id="emp_joining_date" data-validation="date">
+                                </div>
+                            </div>
+                            <div class="six columns zero_pad">    
+                                <div class="four columns zero_pad left">
+                                	<label>Current Role Start Date: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                	<input type="text" class="" placeholder="eg: xxxx-xx-xx" name="emp_pos_startdate" id="emp_pos_startdate" data-validation="date">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                            <div class="six columns zero_pad">
+                                <div class="four columns zero_pad">
+                                    <label>Length of Service: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                    <input type="text" placeholder="eg: 2" name="emp_pos_lenghtofservice" id="emp_pos_lenghtofservice">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="twelve columns zero_pad">
+                            <div class="six columns zero_pad">
+                                <div class="four columns zero_pad">
+                                    <label>Photo: </label>
+                                </div>
+                                <div class="six columns zero_pad left">
+                                    <input type="file" name="emp_photo" id="emp_photo">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="six columns zero_pad left"><br/>
+                        	<label class="four columns">&nbsp;</label>
+                            <input type="submit" name="submit" class="button two columns zero_pad left" value="Save">
+                            <input type="reset" name="cancel" class="button two columns zero_pad left" onClick="window.location.href='employee.html'" value="Cancel">
+                        </div>
+                      </div>
+                  </li>
+                  
+                  <li id="orgTab">
+                  	  <div class="twelve columns">
+                      		<div class="twelve columns zero_pad">
+                             <fieldset>
+                             <legend>Assign Role</legend>	
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Employee Name: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect left" disabled>
+                                        <option value="1">Josh</option>
+                                        <option value="2">Tom Smith</option>
+                                        <option value="3">Sally Doe</option>
+                                        <option value="4">John Doe</option>
+                                        <option value="5">Raiyan</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Client Business Role: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect left" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Manager</option>
+                                        <option value="">Line Manager</option>
+                                        <option value="">Team Lead</option>
+                                        <option value="">Line Associate</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Reporting To: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect left" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Nick - Line Manager</option>
+                                        <option value="">Tom Smith - Line Manager</option>
+                                        <option value="">Sally Doe - Team Lead</option>
+                                        <option value="">John Doe - Line Manager</option>
+                                        <option value="">Raiyan - Team Lead</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </fieldset> 
+                           </div>
+                          	<fieldset>
+                            <legend>Hierarchy</legend>	
+                            <div class="twelve columns zero_pad">    
+                                <div class="twelve columns zero_pad">
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Global: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">QCG Global</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Region: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Europe</option>
+                                        <option value="">North America</option>
+                                        <option value="">Asia</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Country/Market: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">France</option>
+                                        <option value="">UK</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="twelve columns zero_pad">
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Channel: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Travel</option>
+                                        <option value="">In-Store</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                 
+                                <div class="four columns left">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Hub: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Heathrow T5</option>
+                                        <option value="">Heathrow T4</option>
+                                        <option value="">Heathrow T3</option>
+                                        <option value="">Heathrow T2</option>
+                                        <option value="">Heathrow T1</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                </div>
+                           </div>
+                           <div class="twelve columns zero_pad">    
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Location: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">T5 Departures</option>
+                                        <option value="">T5 Arrivals</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns left">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Sub-Location: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Departure Lounge</option>
+                                        <option value="">Departure Gates 5-25</option>
+                                    </select>
+                                    </div>
+                                </div>
+                          </div>
+                          </fieldset> 
+                          <div class="twelve columns">
+                          <div class="twelve columns zero_pad">
+                                <label class="two columns">&nbsp;</label>
+                                <input type="submit" name="submit" class="button one columns zero_pad left" value="Save">
+                                <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='employee.html#org'" value="Cancel">
+                          </div>
+                          </div>
+                      </div>
+                  </li>
+                  
+                  <li id="accreditationTab">
+                  	  <div class="twelve columns">
+                        <div class="twelve columns zero_pad">
+                        	<fieldset>
+                            	<legend>Employee</legend>
+                                    <div class="four columns left">    
+                                        <div class="six columns zero_pad left">
+                                        <label>Employee Name: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">
+                                        <select name="" class="customSelect" disabled>
+                                            <option value="">Josh</option>
+                                            <option value="">Tom Smith</option>
+                                            <option value="">Sally Doe</option>
+                                            <option value="">John Doe</option>
+                                            <option value="">Raiyan</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                            </fieldset>
+                            <fieldset>
+                            	<legend>Specialisation</legend>
+                                <div class="twelve columns zero_pad">  
+                                	
+                                    <div class="four columns left">    
+                                        <div class="six columns zero_pad left">
+                                        <label>Specialisation 1: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">
+                                        <select name="" class="customSelect">
+                                            <option value="">Select</option>
+                                            <option value="">Perfume</option>
+                                            <option value="">Selling Skills</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="four columns left">    
+                                        <div class="six columns zero_pad left">
+                                        <label>Specialisation 2: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">
+                                        <select name="" class="customSelect">
+                                            <option value="">Select</option>
+                                            <option value="">Perfume</option>
+                                            <option value="">Selling Skills</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="four columns left">    
+                                        <div class="six columns zero_pad left">
+                                        <label>Specialisation 3: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">
+                                        <select name="" class="customSelect">
+                                            <option value="">Select</option>
+                                            <option value="">Perfume</option>
+                                            <option value="">Selling Skills</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="four columns left">    
+                                        <div class="six columns zero_pad left">
+                                        <label>Specialisation 4: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">
+                                        <select name="" class="customSelect">
+                                            <option value="">Select</option>
+                                            <option value="">Perfume</option>
+                                            <option value="">Selling Skills</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="four columns left">    
+                                        <div class="six columns zero_pad left">
+                                        <label>Specialisation 5: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">
+                                        <select name="" class="customSelect">
+                                            <option value="">Select</option>
+                                            <option value="">Perfume</option>
+                                            <option value="">Selling Skills</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <!--Add new Row Dynamically-->
+                                    <span class="newRowDiv">
+                                    	<input type="hidden" value="5" class="splRows" name="splRows">
+                                    </span>
+                               </div>
+                               <div class="twelve columns zero_pad">
+                                    <label class="two columns">&nbsp;</label>
+                                    <a href="javascript:void(0)" class="addMoreSpl"><span class="fi-plus"></span> Add more</a>
+                                    &nbsp;|&nbsp;
+                                    <a href="add_spl.html" rel="shadowbox;width=500;height=200" class="addNewSpl"><span class="fi-plus"></span> Add New Specialisation</a>
+                                </div>
+                            </fieldset> 
+                        </div>
+                        <div class="twelve columns zero_pad">
+                        	<fieldset>
+                            	<legend>Accreditation</legend>
+                                <div class="twelve columns zero_pad">    
+                                    
+                                    <div class="four columns left">    
+                                        <div class="six columns zero_pad left">
+                                        <label>Training: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">
+                                        <select name="" class="customSelect">
+                                            <option value="">Select</option>
+                                            <option value="">Training 1</option>
+                                            <option value="">Training 2</option>
+                                            <option value="">Training 3</option>
+                                    	</select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="four columns ">   
+                                    	<div class="six columns">   
+                                        	<label class="">Accreditation: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">   
+                                    	<select name="" class="customSelect select90">
+                                            <option value="">Select</option>
+                                            <option value="">Basic Selling Skills</option>
+                                            <option value="">CoBC</option>
+                                            <option value="">Attendance</option>
+                                        </select>
+                                        <a href="add_accreditation.html" class="" title="Add" rel="shadowbox;width=500;height=200"><span class=" fi-plus"></span></a>
+                                    	</div>
+                                    </div>
+                                    <div class="four columns">   
+                                        <div class="six columns">   
+                                        	<label class="">Level: </label>
+                                        </div>
+                                        <div class="six columns zero_pad left">   
+                                    	<select name="" class="customSelect select90">
+                                            <option value="">Select</option>
+                                            <option value="">Intermediate</option>
+                                            <option value="">Advanced</option>
+                                            <option value="">Expert</option>
+                                            <option value="">Trainer</option>
+                                        </select>
+                                        <a href="add_level.html" class="" title="Add" rel="shadowbox;width=500;height=200"><span class=" fi-plus"></span></a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <!--Add new Row Dynamically-->
+                               <span class="newTrainingRowDiv">
+                                  <input type="hidden" value="5" class="trainingRows" name="trainingRows">
+                               </span>
+                               <div class="twelve columns zero_pad">
+                                  <label class="two columns">&nbsp;</label>
+                                  <a href="javascript:void(0)" class="addMoreTraining"><span class="fi-plus"></span> Add more</a>
+                               </div>
+                            </fieldset> 
+                        </div>
+                        <div class="twelve columns zero_pad">
+                              <label class="two columns">&nbsp;</label>
+                              <input type="submit" name="submit" class="button one columns zero_pad left" value="Save">
+                              <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='employee.html#accreditation'" value="Cancel">
+                        </div>
+                      </div>
+                  </li>
+                </ul>
+                </form>
+            </div>
+        </div>
+    </div><!--containerRow End-->
+    
+    <div class="row rd_footerDivrow">
+        <div class="twelve columns footerCntDiv">
+            <ul class="footer_ul">
+                    <li class="left">&copy; <a href="javascript:void(0)" target="_new">Quadrant Consulting Group </a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript">
+	$(document).foundationTabs();
+	$(document).ready(function(){
+		$( "#emp_joining_date" ).datepicker({
+			dateFormat: 'yy-mm-dd',
+			changeMonth: true,
+      		changeYear: true,
+			onSelect: function (b, c) {
+				$("#emp_pos_startdate").datepicker("option", "minDate", $("#emp_joining_date").datepicker("getDate"));
+				var a = $("#kpi_valid_from").datepicker("getDate");
+				a.setDate(a.getDate() + 90);
+				$("#emp_pos_startdate").datepicker("option", "maxDate", a);
+			}
+			});
+			
+		$( "#emp_pos_startdate " ).datepicker({
+			dateFormat: 'yy-mm-dd',
+			changeMonth: true,
+      		changeYear: true
+			});
+		
+		/*$('.multiselect').multiselect({
+			enableFiltering: true,
+			enableCaseInsensitiveFiltering: true
+			});*/
+		
+		$('.addMoreSpl').on('click',function(){
+			var newRow = parseInt($('.splRows').val()) + 1;
+			$('.splRows').val(newRow);
+			var txt ='';
+			var txt = '<div class="four columns left"><div class="six columns zero_pad left"><label>Specialisation '+ newRow +': </label></div><div class="six columns zero_pad left"><select name="" class="customSelect"><option value="">Select</option><option value="">Perfume</option><option value="">Selling Skills</option></select></div></div>';
+			$('.newRowDiv').append(txt);
+		});
+		
+		$('.addMoreTraining').on('click',function(){
+			var newRow = parseInt($('.trainingRows').val()) + 1;
+			$('.trainingRows').val(newRow);
+			var txt ='';
+			var txt = '<div class="twelve columns zero_pad"><div class="four columns"><div class="six columns zero_pad"><label class="">Training: </label></div><div class="six columns zero_pad"><select name="" class="customSelect"><option value="">Select</option><option value="">Training 1</option><option value="">Training 2</option><option value="">Training 3</option></select></div></div><div class="four columns"><div class="six columns"><label class="">Accreditation: </label></div><div class="six columns zero_pad left"><select name="" class="customSelect select90"><option value="">Select</option><option value="">Basic Selling Skills</option><option value="">CoBC</option><option value="">Attendance</option></select></div></div><div class="four columns "><div class="six columns"><label class="">Level: </label></div><div class="six columns zero_pad left"><select name="" class="customSelect select90"><option value="">Select</option><option value="">Intermediate</option><option value="">Advanced</option><option value="">Expert</option><option value="">Trainer</option></select></div></div></div>';
+			$('.newTrainingRowDiv').append(txt);
+		});
+	});
+</script>
+</body>
+</html>

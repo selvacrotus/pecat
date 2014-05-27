@@ -1,0 +1,220 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <![endif]
+<head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]--> 
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/shadowbox.css" />
+<link rel="stylesheet" href="../css/customstyle.css" />
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.foundation.tabs.js"></script>
+<script src="../js/jquery.form-validator.js"></script>
+<script src="../js/shadowbox.js"></script>
+<script src="../js/functions.js"></script>
+<script type="text/javascript">
+	$(function() { 
+		$.validate();
+    });
+</script>
+</head>
+<body>
+	<div class="row containerRow">
+    	<div class="twelve columns employeesTblDiv">
+            <div class="twelve columns employeeForm zero_pad">
+            	<form name="empForm" id="empForm" action="" method="post" class="formStyle" enctype="multipart/form-data">
+                <!--<dl class="tabs">
+                  <dd class="active"><a href="#org">Organization Mapping</a></dd>
+				  <dd ><a href="#personal">Personal Info</a></dd>
+                  <dd><a href="#accreditation">Accreditation</a></dd>
+                </dl>-->
+                <h5>Organization Map</h5>
+                <ul class="tabs-content">
+                  <li id="orgTab" class="active">
+                  	  <div class="twelve columns orgTabRes">
+                      		<div class="twelve columns zero_pad">
+                             <fieldset>
+                             <legend>Assign Role</legend>	
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Employee Name: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect left" disabled>
+                                        <option value="1">Josh</option>
+                                        <option value="2">Tom Smith</option>
+                                        <option value="3">Sally Doe</option>
+                                        <option value="4">John Doe</option>
+                                        <option value="5">Raiyan</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Client Business Role: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect left" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Manager</option>
+                                        <option value="">Line Manager</option>
+                                        <option value="">Team Lead</option>
+                                        <option value="">Line Associate</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Reporting To: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect left" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Nick - Line Manager</option>
+                                        <option value="">Tom Smith - Line Manager</option>
+                                        <option value="">Sally Doe - Team Lead</option>
+                                        <option value="">John Doe - Line Manager</option>
+                                        <option value="">Raiyan - Team Lead</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </fieldset> 
+                           </div>
+                          	<fieldset>
+                            <legend>Heirarchy</legend>	
+                            <div class="twelve columns zero_pad">    
+                                <div class="twelve columns zero_pad">
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Global: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">QCG Global</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Region: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Europe</option>
+                                        <option value="">North America</option>
+                                        <option value="">Asia</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Country/Market: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">France</option>
+                                        <option value="">UK</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="twelve columns zero_pad">
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Channel: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Travel</option>
+                                        <option value="">In-Store</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                 
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Hub: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Heathrow T5</option>
+                                        <option value="">Heathrow T4</option>
+                                        <option value="">Heathrow T3</option>
+                                        <option value="">Heathrow T2</option>
+                                        <option value="">Heathrow T1</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="four columns hideformediumdown">&nbsp;</div>
+                                </div>
+                           </div>
+                           <div class="twelve columns zero_pad">    
+                                <div class="four columns ">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Location: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">T5 Departures</option>
+                                        <option value="">T5 Arrivals</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="four columns">    
+                                    <div class="six columns zero_pad left">
+                                    <label>Sub-Location: </label>
+                                    </div>
+                                    <div class="six columns zero_pad left">
+                                    <select name="" class="customSelect" data-validation="required">
+                                        <option value="">Select</option>
+                                        <option value="">Departure Lounge</option>
+                                        <option value="">Departure Gates 5-25</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="four columns hideformediumdown">&nbsp;</div>
+                          </div>
+                          </fieldset> 
+                          <div class="twelve columns">
+                          <div class="twelve columns zero_pad">
+                                <label class="two columns">&nbsp;</label>
+                                <input type="submit" name="submit" class="button one columns zero_pad left" value="Update">
+                                <input type="button" name="cancel" class="button one columns zero_pad left" onClick="window.parent.Shadowbox.close()" value="Cancel">
+                          </div>
+                          </div>
+                      </div>
+                  </li>
+                </ul>
+                </form>
+            </div>
+        </div>
+    </div><!--containerRow End-->
+<script type="text/javascript">
+	$(document).foundationTabs();
+</script>
+</body>
+</html>

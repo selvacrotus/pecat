@@ -1,0 +1,400 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/shadowbox.css" />
+<!--<link rel="stylesheet" href="../css/jquery.dataTables.css" />-->
+<link href="../css/jtable_themes/metro/blue/jtable.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/customstyle.css" />
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]--> 
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+</head>
+<body>
+<div class="wrapperDiv">
+	<div class="row headerRow">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="twelve logoTitleDiv columns left zero_pad">
+                    <a href="index.html" class="mgmLogo" id="showLeftPush"><img src="../images/CrotusLogo.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt">
+                    <p>Welcome <b>Admin </b>
+                    <br/><small>Thu Mar 11, 2014</small>&nbsp;|&nbsp;<a href="../login.html">Logout</a>
+                    </p>
+                </div>
+                <div class="twelve columns zero_pad menuDiv"><br/><br/>
+                    <ul class="menuULLI">
+                        <li><a href="index.html" class="active">Employee</a></li>
+                        <li><a href="kpi.html">KPI</a></li>
+                        <li><a href="training.html">Training</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="row containerRow">
+    	<div class="twelve columns employeesTblDiv">
+        	<!--<div class="six columns zero_pad">
+        		<h5>Employees</h5>
+            </div>
+            <div class="twelve columns text-right zero_pad">
+           		<br/><br/>
+            	<a href="employee.html"><span class="fi-plus addNew">&nbsp;New Employee</span></a>
+            </div>-->
+            <div class="twelve columns zero_pad filtering">
+                <form>
+                    <div class="three columns zero_pad">
+                    	<label class="three columns zero_pad">Name: </label>
+                        <input type="text" name="name" id="name" class="seven columns zero_pad left" />
+                    </div>
+                    <!--<div class="four columns zero_pad left">
+                    	<label class="two columns zero_pad">Column: </label>
+                        <select class="three columns zero_pad left customSelect" id="cityId" name="cityId">
+                            <option selected="selected" value="0">All </option>
+                            <option value="1">Adana</option>
+                            <option value="2">Ankara</option>
+                            <option value="3">Athens</option>
+                            <option value="4">Beijing</option>
+                            <option value="5">Berlin</option>
+                            <option value="6">Bursa</option>
+                            <option value="7">İstanbul</option>
+                            <option value="8">London</option>
+                            <option value="9">Madrid</option>
+                            <option value="10">Mekke</option>
+                            <option value="11">New York</option>
+                            <option value="12">Paris</option>
+                            <option value="13">Samsun</option>
+                            <option value="14">Trabzon</option>
+                            <option value="15">Volos</option>
+                        </select>
+                    </div>-->
+                    <button type="submit" class="button prefix loadRecrdBtn" id="LoadRecordsButton">Load records</button>
+                </form>
+            </div>
+            <div class="twelve columns zero_pad">
+                <!--<div class="responsiveTbl">
+                <table cellpadding="0" cellspacing="0" class="" id="emplListTbl">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Line Manager</th>
+                        <th>Location</th>
+                        <th>Sub Location</th>
+                        <th>Hub</th>
+                        <th>Country</th>
+                        <th>Region</th>
+                        <th>Agency</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Nick Hogendijk</td>
+                        <td>Smith</td>
+                        <td>Departures</td>
+                        <td>T1</td>
+                        <td>Sydney Airport</td>
+                        <td>Australia</td>
+                        <td>Asia</td>
+                        <td>Nuance</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Josh</td>
+                        <td>Tom</td>
+                        <td>Departures</td>
+                        <td>T5</td>
+                        <td>Heathrow</td>
+                        <td>England</td>
+                        <td>Europe</td>
+                        <td>WDFG</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Mike Doe</td>
+                        <td>Tom Jerry</td>
+                        <td>Arrivals</td>
+                        <td>T3</td>
+                        <td>Heathrow</td>
+                        <td>England</td>
+                        <td>Europe</td>
+                        <td>WDFG</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Sally Doe</td>
+                        <td>Tom Smith</td>
+                        <td>Down Town</td>
+                        <td>Galleria</td>
+                        <td>Singapore</td>
+                        <td>Singapore</td>
+                        <td>Asia</td>
+                        <td>DFS</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Tom Smith</td>
+                        <td>Departures</td>
+                        <td>T1</td>
+                        <td>Sydney Airport</td>
+                        <td>Australia</td>
+                        <td>Asia</td>
+                        <td>Nuance</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Raiyan</td>
+                        <td>Pradeep Kumar</td>
+                        <td>T1 Departures</td>
+                        <td>Mumbai Airport</td>
+                        <td>Mumbai Airport</td>
+                        <td>India</td>
+                        <td>Asia</td>
+                        <td>Flamingo</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Nick</td>
+                        <td>Steve Waugh</td>
+                        <td>Departures</td>
+                        <td>T8</td>
+                        <td>JFK</td>
+                        <td>USA</td>
+                        <td>AMS</td>
+                        <td>WDFG</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Nick Hogendijk</td>
+                        <td>Smith</td>
+                        <td>Departures</td>
+                        <td>T1</td>
+                        <td>Sydney Airport</td>
+                        <td>Australia</td>
+                        <td>Asia</td>
+                        <td>Nuance</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Josh</td>
+                        <td>Tom</td>
+                        <td>Departures</td>
+                        <td>T5</td>
+                        <td>Heathrow</td>
+                        <td>England</td>
+                        <td>Europe</td>
+                        <td>WDFG</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Mike Doe</td>
+                        <td>Tom Jerry</td>
+                        <td>Arrivals</td>
+                        <td>T3</td>
+                        <td>Heathrow</td>
+                        <td>England</td>
+                        <td>Europe</td>
+                        <td>WDFG</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Sally Doe</td>
+                        <td>Tom Smith</td>
+                        <td>Down Town</td>
+                        <td>Galleria</td>
+                        <td>Singapore</td>
+                        <td>Singapore</td>
+                        <td>Asia</td>
+                        <td>DFS</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Tom Smith</td>
+                        <td>Departures</td>
+                        <td>T1</td>
+                        <td>Sydney Airport</td>
+                        <td>Australia</td>
+                        <td>Asia</td>
+                        <td>Nuance</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Raiyan</td>
+                        <td>Pradeep Kumar</td>
+                        <td>T1 Departures</td>
+                        <td>Mumbai Airport</td>
+                        <td>Mumbai Airport</td>
+                        <td>India</td>
+                        <td>Asia</td>
+                        <td>Flamingo</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    <tr>
+                        <td>Nick</td>
+                        <td>Steve Waugh</td>
+                        <td>Departures</td>
+                        <td>T8</td>
+                        <td>JFK</td>
+                        <td>USA</td>
+                        <td>AMS</td>
+                        <td>WDFG</td>
+                        <td>
+                        	<a href="employee.html"><span class="fi-pencil small"></span></a>
+                        	<a href="additional_info.html" rel="shadowbox;width=1024;height=450"><span class="fi-results-demographics small"></span></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>-->
+                <div id="PersonTableContainer"></div>
+            </div>
+            
+        </div>
+    </div><!--containerRow End-->
+    
+    <div class="row rd_footerDivrow">
+        <div class="twelve columns footerCntDiv">
+            <ul class="footer_ul">
+                    <li class="left">&copy; <a href="javascript:void(0)" target="_new">Quadrant Consulting Group </a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/shadowbox.js"></script>
+<!--<script src="../js/jquery.dataTables.min.js"></script>-->
+<script src="../js/jquery.jtable.min.js"></script>
+<script src="../js/functions.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	Shadowbox.init();
+	//$('#emplListTbl').dataTable();
+	$('#PersonTableContainer').jtable({
+            title: 'Employees <a href="employee.html" class="right addNew"><span class="fi-plus">&nbsp;New Employee</span></a>',
+            fields: {
+                PersonId: {
+                    key: true,
+                    list: false
+                },
+                Name: {
+                    title: 'Name',
+                },
+                ReportingTo: {
+                    title: 'Reporting to',
+                },
+				Channel: {
+					title: 'Channel'
+				},
+                Location: {
+                    title: 'Location',
+                },
+				Hub: {
+                    title: 'Hub',
+                },
+				Country: {
+                    title: 'Country',
+                },
+				Actions: {
+                    title: 'Actions',
+                }
+            },
+			paging : true,
+			pageSize: 5,
+			sorting : true,
+			multiSorting :true,
+			/*selecting: true, //Enable selecting
+			multiselect: true, //Allow multiple selecting
+			selectingCheckboxes: true, //Show checkboxes on first column*/
+			columnResizable: true,
+			defaultSorting: 'Country DESC',
+			jtStartIndex: 0,
+			jtPageSize: 5,
+			actions: {
+				listAction: function (postData, jtParams) {
+				return {
+					"Result": "OK",
+					"Records": [
+						  {"PersonId":1,"Name":"Nick","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"England","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":2,"Name":"John Doe","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"UK","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":3,"Name":"Sally Doe","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"UK","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":4,"Name":"Joshua","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"Australia","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":5,"Name":"Johnson","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"England","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":6,"Name":"Maxwell","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"England","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":7,"Name":"Sachin","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"England","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":1,"Name":"Nick","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"England","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":2,"Name":"John Doe","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"UK","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":3,"Name":"Sally Doe","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"UK","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":4,"Name":"Joshua","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"Australia","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":5,"Name":"Johnson","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"England","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":6,"Name":"Maxwell","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"England","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' },
+						  {"PersonId":7,"Name":"Sachin","ReportingTo":'Joshua',"Channel":"In-Store","Location":"Departures","Hub":'Heathrow',"Country":"England","Agency":'Nuance',"Actions": '<a href="employee.html"><span class="fi-pencil"></span></a>' }
+						],
+					"TotalRecordCount": 14,
+
+				};
+				}
+            },
+            
+        });
+		
+		//Re-load records when user click 'load records' button.
+        $('#LoadRecordsButton').click(function (e) { 
+            e.preventDefault();
+            $('#PersonTableContainer').jtable('load', {
+                name: $('#name').val()
+            });
+        });
+ 
+        //Load all records when page is first shown
+        $('#LoadRecordsButton').click();
+		
+		$('#PersonTableContainer').jtable('load');
+		
+	});
+</script>
+</body>
+</html>

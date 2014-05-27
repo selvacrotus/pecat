@@ -1,0 +1,477 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]--><head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]--> 
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/jquery.treeview.css"/>
+<link rel="stylesheet" href="../css/fullcalendar.css" />
+<link rel="stylesheet" href="../css/shadowbox.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../css/multi-select.css" />
+<link rel="stylesheet" href="../css/customstyle.css" />
+<!--<link rel="stylesheet" href="../css/jquery.multiselect2side.css" />-->
+
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.foundation.tabs.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/jquery-ui-timepicker-addon.js"></script>
+<script src="../js/jquery.treeview.js"></script>
+<script src="../js/shadowbox.js"></script>
+<script src="../js/jquery.form-validator.js"></script>
+<!--<script src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="../css/bootstrap-multiselect.css" type="text/css"/>-->
+<script src="../js/jquery.multi-select.js"></script>
+<script src="../js/jquery.quicksearch.js"></script>
+<!--<script src="../js/jquery.multiselect2side.js"></script>-->
+<script src="../js/functions.js"></script>
+<script src="../js/fullcalendar.js"></script>
+
+<script type="text/javascript">
+	$(function() { 
+		// datetime validation
+		/*$.formUtils.addValidator({
+		  name : 'datetime',
+		  validatorFunction : function(val, $el, conf, language, $form) {
+				var dateFormat = 'yyyy-mm-dd hh:mm tt';
+				if($el.valAttr('format')) {
+					dateFormat = $el.valAttr('format');
+				}
+				else if( conf.dateFormat ) {
+					dateFormat = conf.dateFormat;
+				}
+				alert($.formUtils.parseDateTime(val, dateFormat));
+				return $.formUtils.parseDateTime(val, dateFormat) !== false;
+		  },
+		  errorMessage : 'Invalid date and time',
+		  errorMessageKey: 'Invalid date and time'
+		});*/
+		
+		$.validate();
+    });
+</script>
+</head>
+<body id="bodybg">
+<div class="wrapperDiv">
+	<div class="row headerRow">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="twelve logoTitleDiv columns left zero_pad">
+                    <a href="index.html" class="mgmLogo" id="showLeftPush"><img src="../images/CrotusLogo.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt"><br/><br/>
+                    <p class="eleven columns">Welcome <b>Admin </b>
+                    <br/><small>Thu Mar 11, 2014</small>&nbsp;|&nbsp;<a href="../login.html">Logout</a>
+                    </p>
+                    <p class="one columns zero_pad"><img src="../images/user.jpg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="twelve columns right menuDivTop">
+            <div class="twelve columns zero_pad menuDiv">
+                <ul class="menuULLI">
+                    <li><a href="index.html">Employee</a></li>
+                    <li><a href="kpi.html">KPI</a></li>
+                    <li><a href="training.html" class="active">Training</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	<div class="row containerRow">
+    	<div class="twelve columns employeesTblDiv">
+            <div class="twelve columns summaryForm zero_pad">
+            	<form name="trainingForm" action="#" id="trainingForm" method="post" class="formStyle" enctype="multipart/form-data">
+                <dl class="tabs">
+                	<dd class="active"><a href="#trainingCal" onClick="showCalendar()">Training Calendar</a></dd>
+                    <dd class=""><a href="#createEvent">Create Training Event</a></dd>
+                    <dd class=""><a href="#scheduleEvent">Schedule Event</a></dd>
+                </dl>
+                
+                <ul class="tabs-content">
+                  <li class="active" id="trainingCalTab">
+                      <div class="twelve columns zero_pad">
+                        <div class="twelve columns zero_pad">
+                            <div class="twelve columns right zero_pad roadMap1" id="calendar"></div>
+                        </div>
+                      </div>
+                  </li>
+                  
+                  <li id="createEventTab">
+                  	<div class="twelve columns">
+                    	
+                        <div class="twelve columns zero_pad">
+                          <div class="eight columns left">    
+                              <div class="four columns zero_pad left">
+                              <label>Name: </label>
+                              </div>
+                              <div class="eight columns zero_pad left">
+                              <input type="text"  class="" name="training_name" placeholder="training name" id="training_name" data-validation="required">
+                              </div>
+                          </div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                            <div class="eight columns left">    
+                              <div class="four columns zero_pad left">
+                              <label>Description: </label>
+                              </div>
+                              <div class="eight columns zero_pad left">
+                              <textarea rows="3" class=" "placeholder="training description" data-validation="required"></textarea>
+                              </div>
+                          	</div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                            <div class="eight columns left">    
+                              <div class="four columns zero_pad left">
+                              <label>Accreditation: </label>
+                              </div>
+                              <div class="eight columns zero_pad left multiSelDiv">
+                              <select name="accred[]" multiple class="customSelect multiSelect" data-validation="required">
+                                  <option value="val1">Basic Selling Skill</option>
+                                  <option value="val2">CoBC</option>
+                                  <option value="val3">Attendance</option>
+                              </select>
+                              </div>
+                              
+                              <div class="selectedVals"></div>
+                              
+                          	</div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                            <div class="eight columns left">  
+                                <div class="four columns zero_pad">
+                                    <label class="">Link to KPI: </label>
+                                </div>
+                                <div class="eight columns zero_pad multiSelDiv">
+                                    <select name="linktoKPI[]" multiple class="customSelect multiSelect" data-validation="required">
+                                        <option value="val1">Product Knowledge</option>
+                                        <option value="val2">Selling Skills</option>
+                                        <option value="val3">Personal Grooming</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                        	<div class="eight columns left">    
+                              <div class="four columns zero_pad left">
+                              <label>Materials: </label>
+                              </div>
+                              <div class="eight columns zero_pad left">
+                              <input type="file" multiple class="" >
+                              </div>
+                          	</div>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">  <br/>  
+                            <div class="eight columns left">    
+                              <div class="four columns zero_pad left">
+                              <label>Links: </label>
+                              </div>
+                              <div class="eight columns zero_pad left">
+                              <input type="text" class="" placeholder="reference link">
+                              </div>
+                          	</div>
+                            
+                        	<!--Add new Row Dynamically-->
+                            <span class="newRowDiv">
+                                <input type="hidden" value="5" class="trainingRows" name="trainingRows">
+                            </span>
+                        </div>
+                        <div class="twelve columns zero_pad">
+                            <div class="eight columns left">    
+                              <div class="four columns zero_pad left">
+                              <label>&nbsp;</label>
+                              </div>
+                              <div class="eight columns zero_pad left">
+                              <a href="javascript:void(0)" class="addNewLink"><span class="fi-plus"></span> Add more link</a>
+                              </div>
+                          	</div>
+                        </div>
+                        <div class="twelve columns zero_pad"><br/>
+                            <div class="eight columns left">    
+                              <div class="four columns zero_pad left">
+                              <label>&nbsp;</label>
+                              </div>
+                              <div class="eight columns zero_pad left">
+                              <input type="submit" name="submit" class="button one columns zero_pad left" value="Create">
+                              <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='training.html#createEvent'" value="Cancel">
+                              </div>
+                          	</div>
+                        </div>
+                    </div>
+                  </li>
+                  
+                  <li id="scheduleEventTab">
+                  	<div class="twelve columns zero_pad">
+                        <fieldset>
+                        	<legend>Training</legend>
+                            <div class="six columns left">    
+                              <div class="five columns zero_pad left">
+                              <label>Select Training ID:</label>
+                              </div>
+                              <div class="six columns zero_pad left">
+                              <select name="" class="customSelect" data-validation="required">
+                                <option value="">Select</option>
+                                <option value="1">Training ID 1</option>
+                                <option value="2">Training ID 2</option>
+                                <option value="3">Training ID 3</option>
+                              </select>
+                              </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                    <div class="twelve columns zero_pad">
+                    	<fieldset>
+                        	<legend>Add Schedule</legend>
+                            
+                            <div class="twelve columns zero_pad">
+                                <div class="six columns left">    
+                                  <div class="five columns zero_pad left">
+                                  <label>From Date:</label>
+                                  </div>
+                                  <div class="six columns zero_pad left">
+                                  <input type="text" placeholder="eg: xxxx-xx-xx xx:xx xx" class="" id="trainingFromDate">
+                                  <!--&nbsp; Time &nbsp;
+                                  <input type="text" placeholder="eg: xx:xx xx" class="three columns" id="trainingFromTime">-->
+                                  </div>
+                                </div>
+                                
+                                <div class="six columns left">    
+                                  <div class="five columns zero_pad left">
+                                  <label>To Date:</label>
+                                  </div>
+                                  <div class="six columns zero_pad left">
+                                  <input type="text" placeholder="eg: xxxx-xx-xx xx:xx xx" class="" id="trainingToDate">
+                                  <!--&nbsp; Time &nbsp;
+                                  <input type="text" class="three columns" id="trainingToTime">-->
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns zero_pad">
+                            	
+                                <div class="six columns left">    
+                                  <div class="five columns zero_pad left">
+                                  <label>Location:</label>
+                                  </div>
+                                  <div class="six columns zero_pad left">
+                                  <input type="text" class="" placeholder="location" id="training_location" data-validation="required">
+                                  </div>
+                                </div>
+                                
+                                <div class="six columns left">    
+                                  <div class="five columns zero_pad left">
+                                  <label>Total Seats:</label>
+                                  </div>
+                                  <div class="six columns zero_pad left">
+                                  <input type="text" class="" placeholder="eg: 10" id="total_seats" data-validation="required">
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns zero_pad">
+                                <div class="six columns left">    
+                                  <div class="five columns zero_pad left">
+                                  <label>Additional Comments:</label>
+                                  </div>
+                                  <div class="six columns zero_pad left">
+                                  <textarea rows="4" class="left" placeholder="comments if any..."></textarea>
+                                  </div>
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns zero_pad"><br/>
+                                <div class="six columns left">    
+                                  <div class="five columns zero_pad left">
+                                  <label>&nbsp;</label>
+                                  </div>
+                                  <div class="six columns zero_pad left">
+                                  <input type="submit" name="submit" id="submitFrm" class="button one columns zero_pad left" value="Save">
+                                  <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='training.html#scheduleEvent'" value="Cancel">
+                                  </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                  </li>
+                </ul>
+                </form>
+            </div>
+        </div>
+    </div><!--containerRow End-->
+    
+    <div class="row rd_footerDivrow">
+        <div class="twelve columns footerCntDiv">
+            <ul class="footer_ul">
+                    <li class="left">&copy; <a href="javascript:void(0)" target="_new">Quadrant Consulting Group </a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript">
+	$(document).foundationTabs();
+	function showCalendar(){ 
+		window.setTimeout( function(){ $('.fc-button-today').click() }, 100);
+	}
+	function addEvents(a){
+		if(a =='a'){$('.eventsDiv, .eveCancel').fadeIn(); $('.addEvent, .addCC').hide() }
+		else{ $('.eventsDiv, .eveCancel').hide(); $('.addEvent, .addCC').fadeIn(); }
+		}
+	function addCC(a){
+		if(a =='a'){$('.ccDiv, .ccCancel').fadeIn(); $('.addEvent, .addCC').hide() }
+		else{ $('.ccDiv, .ccCancel').hide(); $('.addEvent, .addCC').fadeIn(); }
+		}
+	
+	$('.multiSelect').multiSelect({
+		  selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+		  selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+		  afterInit: function(ms){
+			var that = this,
+				$selectableSearch = that.$selectableUl.prev(),
+				$selectionSearch = that.$selectionUl.prev(),
+				selectableSearchString = '.'+that.$container.attr('class')+' .ms-elem-selectable:not(.ms-selected)',
+				selectionSearchString = '.'+that.$container.attr('class')+' .ms-elem-selection.ms-selected';
+		
+			that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+			.on('keydown', function(e){
+			  if (e.which === 40){
+				that.$selectableUl.focus();
+				return false;
+			  }
+			});
+		
+			that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+			.on('keydown', function(e){
+			  if (e.which == 40){
+				that.$selectionUl.focus();
+				return false;
+			  }
+			});
+		  },
+		    afterSelect: function(values){
+				$('.selectedVal').append(values+',');
+				this.qs1.cache();
+    			this.qs2.cache();
+		  	},
+			afterDeselect: function(){
+				this.qs1.cache();
+				this.qs2.cache();
+			  }
+		});
+		
+	/*$(".multiSelect").multiselect({
+		enableFiltering: true,
+		filterBehavior: 'both',
+		enableCaseInsensitiveFiltering: true,
+		onChange: function(element, checked) {
+			//alert(element.val());
+			var sval = element.val()+',';
+			$('.selectedVals').append(sval);
+		  }
+		});*/
+		
+		/*$(".multiSelect").multiselect2side({
+			moveOptions: false,
+		})*/;
+
+		
+	/*$('#submitFrm').on('submit', function() { alert('asd');
+		$('.selectedVals').text('Selected: ' + $('#submitFrm').val()).addClass('alert alert-info');
+	  });*/
+	
+	$(document).ready(function(){
+		
+		$( "#trainDate, #ccDate, #trainingFromDate, #trainingToDate" ).datetimepicker({
+			dateFormat: 'yy-mm-dd',
+			changeMonth: true,
+      		changeYear: true,
+			timeFormat: 'hh:mm tt'
+		});
+		/*$( "#trainingFromTime, #trainingToTime" ).timepicker({
+			timeFormat: 'hh:mm tt'
+		});*/
+		
+		$('#calendar').fullCalendar({
+			events: [
+				{
+					title  : 'PECAT training',
+					start  : '2014-05-14 09:00:00',
+					allDay : false // will make the time show
+				},
+				{
+					title  : 'Sales Meeting with Reebok',
+					start  : '2014-05-15',
+					//allDay : false // will make the time show
+				},
+				{
+					title  : 'Sales Meeting with Reebok',
+					start  : '2014-05-16',
+					//allDay : false // will make the time show
+				},
+				{
+					title  : 'Sales Meeting with Reebok',
+					start  : '2014-05-17 10:00:00',
+					allDay : false // will make the time show
+				},
+				{
+					title  : 'New VAT traning',
+					start  : '2014-05-20 12:30:00',
+					allDay : false, // will make the time show
+				}
+			],
+			defaultView: 'month',
+			timeFormat: 'h(:mm) tt',
+			editable: true,
+			eventColor: '#F6F3E0',
+			eventTextColor: '#222',
+			header: {
+				left:   'today prev,next,prevYear,nextYear',
+				center: 'title',
+				right:  'month,agendaWeek,agendaDay'
+			},
+			columnFormat: {	month: 'dddd', week: 'ddd d MMM ', day: 'dddd d MMM ' },
+			formatDate: 'Y-m-d h:i',
+			contentHeight: 400,
+		});
+		
+		Shadowbox.init({
+			title: "",
+			modal: true,
+			onOpen: function(){
+				//setTimeout(function(){ datePickerCrt() }, 2000);
+				}
+			});
+			
+		$('.addNewLink').on('click',function(){
+			var newRow = parseInt($('.trainingRows').val()) + 1;
+			$('.trainingRows').val(newRow);
+			var txt ='';
+			var txt = '<div class="eight columns left"><div class="four columns zero_pad left"><label>Links: </label></div><div class="eight columns zero_pad left"><input type="text" class="" ></div></div>';
+			$('.newRowDiv').append(txt);
+		});
+		
+	});
+</script>
+</body>
+</html>

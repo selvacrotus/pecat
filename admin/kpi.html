@@ -1,0 +1,692 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" >
+<!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]-->
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/multi-select.css" />
+<link rel="stylesheet" href="../css/shadowbox.css" />
+<link rel="stylesheet" href="../css/customstyle.css" />
+<!--<link rel="stylesheet" href="../css/jquery.multiselect2side.css" />-->
+
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.foundation.tabs.js"></script>
+<script src="../js/jquery.form-validator.js"></script>
+<script src="../js/shadowbox.js"></script>
+<script src="../js/jquery.multi-select.js"></script>
+<script src="../js/jquery.quicksearch.js"></script>
+<!--<script src="../js/jquery.multiselect2side.js"></script>-->
+<script src="../js/functions.js"></script>
+<script type="text/javascript">
+	$(function() { 
+		$.validate();
+		Shadowbox.init();
+    });
+</script>
+</head>
+<body id="bodybg">
+<div class="wrapperDiv">
+  <div class="row headerRow">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="twelve logoTitleDiv columns left zero_pad">
+                    <a href="index.html" class="mgmLogo" id="showLeftPush"><img src="../images/CrotusLogo.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt"><br/><br/>
+                    <p class="eleven columns">Welcome <b>Admin </b>
+                    <br/><small>Thu Mar 11, 2014</small>&nbsp;|&nbsp;<a href="../login.html">Logout</a>
+                    </p>
+                    <p class="one columns zero_pad"><img src="../images/user.jpg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="twelve columns right menuDivTop">
+            <div class="twelve columns zero_pad menuDiv">
+                <ul class="menuULLI">
+                    <li><a href="index.html">Employee</a></li>
+                    <li><a href="kpi.html" class="active">KPI</a></li>
+                    <li><a href="training.html">Training</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+  <div class="row containerRow">
+    <div class="twelve columns employeesTblDiv">
+      <div class="twelve columns employeeForm zero_pad">
+        <form name="kpiForm" id="kpiForm" method="post" class="formStyle" enctype="multipart/form-data">
+          <dl class="tabs">
+            <dd class="active"><a href="#ckpi">Create KPI</a></dd>
+            <dd><a href="#groupkpi">Group KPI</a></dd>
+            <dd><a href="#prekpi">Preview KPI</a></dd>
+            <dd><a href="#cscale">Scale</a></dd>
+          </dl>
+          <ul class="tabs-content">
+            <li class="active" id="ckpiTab">
+              <div class="twelve columns">
+                <div class="twelve columns zero_pad"><br/>
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>KPI Valid From: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="text" class="left" placeholder="eg: xxxx-xx-xx"  name="kpi_valid_from" id="kpi_valid_from" data-validation="date">
+                      </div>
+                  </div>
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>KPI Valid To: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="text"  class="left" placeholder="eg: xxxx-xx-xx"  name="kpi_valid_to" id="kpi_valid_to" data-validation="date">
+                      </div>
+                  </div>
+                </div>
+                <div class="twelve columns zero_pad">
+                  
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>KPI Name: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="text" class="" name="kpi_fname" placeholder="eg: product knowledge"  id="kpi_fname" data-validation="required">
+                      </div>
+                  </div>
+                  
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>Scale: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <select name="" class="customSelect" data-validation="required">
+                        <option value="">Select Scale</option>
+                        <option value="">PK_GRP </option>
+                        <option value="">SS_GRP</option>
+                        <option value="">PG_GRP</option>
+                        <option value="">MERCH_GRP</option>
+                        <option value="">CP_GRP</option>
+                      </select>
+                      </div>
+                  </div>
+                </div>
+                
+                <div class="twelve columns zero_pad">
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>Metric Name: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="text" class="" placeholder="eg: metric name" name="kpi_metric" id="kpi_metric" data-validation="required">
+                      </div>
+                  </div>
+                </div>
+                <!--Add new Row Dynamically-->
+                <div class="twelve columns zero_pad newRowDiv">
+                  <input type="hidden" value="1" class="metricRows" name="metricRows">
+                </div>
+                
+                <div class="twelve columns zero_pad">
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>&nbsp;</label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <a href="javascript:void(0)" class="addNewMetric"><span class="fi-plus"></span> Add more</a>
+                      </div>
+                  </div>
+                </div>
+                
+                <div class="twelve columns zero_pad"><br/>
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>&nbsp;</label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="submit" name="submit" class="button one columns zero_pad left" value="Create">
+                  	  <input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='kpi.html#ckpi'" value="Cancel">
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+            <li id="groupkpiTab">
+              <div class="twelve columns">
+                <div class="twelve columns zero_pad">
+                  <div class="five columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>Group Name: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="text" class="" placeholder="eg: group name" name="kpi_group_name" id="kpi_group_name" data-validation="required">
+                      </div>
+                  </div>
+                </div>
+                
+                <div class="twelve columns zero_pad">
+                  <div class="five columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>KPI Group: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <select name="kpi_group" class="customSelect" data-validation="required">
+                        <option value="">Select</option>
+                        <option value="1">Core Group</option>
+                        <option value="2">Non - Core Group</option>
+                      </select>
+                      </div>
+                  </div>
+                </div>
+                
+                 <div class="twelve columns zero_pad">
+                   <div class="twelve columns left">    
+                      <div class="two columns zero_pad left">
+                      <label>Link to KPI: </label>
+                      </div>
+                      <div class="eight columns zero_pad left">
+                      <select name="linkKpi[]" multiple class="customSelect multiSelect"  data-validation="required">
+                        <option value="kpi1">Product Knowledge</option>
+                        <option value="kpi2">Selling Skills</option>
+                        <option value="kpi3">Personal Grooming</option>
+                      </select>
+                      </div>
+                   </div>
+                </div>
+                
+                <!--<div class="twelve columns zero_pad">
+                    <div class="two columns zero_pad">
+                      <label class="twelve columns ">Link to KPI: </label>
+                    </div>
+                    <div class="ten columns zero_pad">
+                      <select name="linkKpi[]" multiple class="customSelect three columns left multiSelect">
+                        <option value="kpi1">Product Knowledge</option>
+                        <option value="kpi2">Selling Skills</option>
+                        <option value="kpi3">Personal Grooming</option>
+                      </select>
+                    </div>
+                </div>-->
+                <div class="twelve columns zero_pad"><br/>
+                  <div class="five columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>&nbsp;</label>
+                      </div>
+                      <div class="seven columns zero_pad left">
+                        <input type="submit" name="submit" class="button one columns zero_pad left" value="Create">
+                  		<input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='kpi.html#groupkpi'" value="Cancel">
+                      </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </li>
+            
+            <li id="prekpiTab">
+              <div class="twelve columns">
+                <div class="twelve columns zero_pad">
+                  <label class="two columns zero_pad">KPI Group: </label>
+                  <select name="" class="customSelect two columns left">
+                    <option value="">KPI Group 1</option>
+                    <option value="">KPI Group 2</option>
+                    <option value="">KPI Group 3</option>
+                    <option value="">KPI Group 4</option>
+                  </select>
+                </div>
+                <div class="twelve columns zero_pad">
+                  <div class="eight columns zero_pad left">
+                    <div class="responsiveTbl">
+                      <table cellpadding="0" cellspacing="0" class="customTbl kpitbl">
+                        <thead>
+                        <th width="150">KPI Name</th>
+                          <th>Metric</th>
+                          <th>1</th>
+                          <th>2</th>
+                          <th>3</th>
+                          <th>4</th>
+                          <th>5</th>
+                          <th>6</th>
+                            </thead>
+                        <tbody>
+                          <tr>
+                            <td>Product Knowledge</td>
+                            <td><b>Metric 1</b></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 2</b></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 3</b></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 4</b></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 5</b></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="three columns legendFld right"> <b>Legend</b>
+                    <ul>
+                      <li>1 - Unsatisfactory</li>
+                      <li>2 - Below Expectations</li>
+                      <li>3 - Mostly Meets Expectations</li>
+                      <li>4 - Fully Meets Expectations</li>
+                      <li>5 - Exceeds Expectations</li>
+                      <li>6 - Not Applicable</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="twelve columns zero_pad">
+                  <div class="eight columns zero_pad left">
+                    <div class="responsiveTbl">
+                      <table cellpadding="0" cellspacing="0" class="customTbl kpitbl">
+                        <thead>
+                        <th width="150">KPI Name</th>
+                          <th>Metric</th>
+                          <th>1</th>
+                          <th>2</th>
+                          <th>3</th>
+                          <th>4</th>
+                          <th>5</th>
+                          <th>6</th>
+                            </thead>
+                        <tbody>
+                          <tr>
+                            <td>Selling Skills</td>
+                            <td><b>Metric 1</b></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 2</b></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 3</b></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 4</b></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 5</b></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="three columns legendFld right"> <b>Legend</b>
+                    <ul>
+                      <li>1 - Unsatisfactory</li>
+                      <li>2 - Below Expectations</li>
+                      <li>3 - Mostly Meets Expectations</li>
+                      <li>4 - Fully Meets Expectations</li>
+                      <li>5 - Exceeds Expectations</li>
+                      <li>6 - Not Applicable</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="twelve columns zero_pad">
+                  <div class="eight columns zero_pad left">
+                    <div class="responsiveTbl">
+                      <table cellpadding="0" cellspacing="0" class="customTbl kpitbl">
+                        <thead>
+                        <th width="150">KPI Name</th>
+                          <th>Metric</th>
+                          <th>1</th>
+                          <th>2</th>
+                          <th>3</th>
+                          <th>4</th>
+                          <th>5</th>
+                          <th>6</th>
+                            </thead>
+                        <tbody>
+                          <tr>
+                            <td>Personal Grooming</td>
+                            <td><b>Metric 1</b></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                            <td><input type="radio" name="widget1" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 2</b></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                            <td><input type="radio" name="widget2" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 3</b></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                            <td><input type="radio" name="widget3" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 4</b></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                            <td><input type="radio" name="widget4" value=""></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Metric 5</b></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                            <td><input type="radio" name="widget5" value=""></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="three columns legendFld right"> <b>Legend</b>
+                    <ul>
+                      <li>1 - Below Expectations</li>
+                      <li>2 - Mostly Meets Expectations</li>
+                      <li>3 - Fully Meets Expectations</li>
+                      <li>4 - Exceeds Expectations</li>
+                      <li>5 - Not Applicable</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+            <li id="cscaleTab">
+              <div class="twelve columns">
+                
+                <div class="twelve columns zero_pad">
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>Scale Name: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="text" class="" placeholder="eg: scale name" name="scale_name" id="scale_name" data-validation="required">
+                      </div>
+                  </div>
+                  
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>Type: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <select name="" class="customSelect" data-validation="required" >
+                        <option value="">Select</option>
+                        <option value="1">Scale</option>
+                      </select>
+                      </div>
+                  </div>
+                </div>
+                
+                <div class="twelve columns zero_pad">
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>Value: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="text" class="" placeholder="eg: 1" name="scale_key" id="scale_key" data-validation="required">
+                      </div>
+                  </div>
+                  
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>Legend: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <select name="" class="customSelect select90" data-validation="required">
+                        <option value="">Select</option>
+                        <option value="1">Disagree</option>
+                        <option value="2">Ok</option>
+                        <option value="3">Agree</option>
+                      </select>
+                      <a href="add_legend.html" rel="shadowbox;width=400;height=200">&nbsp;&nbsp;<span class="fi-plus"></span></a> </div>
+                      </div>
+                  </div>
+                  
+                <!--Add new Row Dynamically-->
+                <div class="twelve columns zero_pad newsScaleRowDiv">
+                  <input type="hidden" value="1" class="scaleRows" name="scaleRows">
+                </div>
+                
+                <div class="twelve columns zero_pad">
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>Comments: </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <input type="checkbox"  class="" name="scale_comments" id="scale_comments">
+                      </div>
+                  </div>
+                </div>
+                
+                <div class="twelve columns zero_pad">
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>&nbsp; </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                      <a href="javascript:void(0)" class="addNewScale"><span class="fi-plus"></span> Add more</a>
+                      </div>
+                  </div>
+                </div>
+                
+                <div class="twelve columns zero_pad"><br/>
+                  <div class="six columns left">    
+                      <div class="five columns zero_pad left">
+                      <label>&nbsp; </label>
+                      </div>
+                      <div class="six columns zero_pad left">
+                       <input type="submit" name="submit" class="button one columns zero_pad left" value="Create">
+                  		<input type="reset" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='kpi.html#cscale'" value="Cancel">
+                      </div>
+                  </div>
+                </div>
+                
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--containerRow End-->
+  
+  <div class="row rd_footerDivrow">
+    <div class="twelve columns footerCntDiv">
+      <ul class="footer_ul">
+        <li class="left">&copy; <a href="javascript:void(0)" target="_new">Quadrant Consulting Group </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	$(document).foundationTabs();
+	$(document).ready(function(){
+		$( "#kpi_valid_from" ).datepicker({
+			dateFormat: 'yy-mm-dd',
+			changeMonth: true,
+      		changeYear: true,
+			minDate: 0,
+			onSelect: function (b, c) {
+				$("#kpi_valid_to").datepicker("option", "minDate", $("#kpi_valid_from").datepicker("getDate"));
+				var a = $("#kpi_valid_from").datepicker("getDate");
+				a.setDate(a.getDate() + 90);
+				$("#kpi_valid_to").datepicker("option", "maxDate", a);
+				//a = $("#kpi_valid_from").datepicker("getDate");
+				//a.setDate(a.getDate() + 3);
+				//$("#kpi_valid_to").datepicker("setDate", a)
+			}
+			});
+		$( "#kpi_valid_to" ).datepicker({
+			dateFormat: 'yy-mm-dd',
+			changeMonth: true,
+      		changeYear: true,
+			minDate: 0
+			});		
+		
+		/*$(".multiSelect").multiselect2side({
+			moveOptions: false,
+		});*/
+		
+		$('.multiSelect').multiSelect({
+			selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+		  selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+		  afterInit: function(ms){
+			var that = this,
+				$selectableSearch = that.$selectableUl.prev(),
+				$selectionSearch = that.$selectionUl.prev(),
+				selectableSearchString = '.'+that.$container.attr('class')+' .ms-elem-selectable:not(.ms-selected)',
+				selectionSearchString = '.'+that.$container.attr('class')+' .ms-elem-selection.ms-selected';
+		
+			that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+			.on('keydown', function(e){
+			  if (e.which === 40){
+				that.$selectableUl.focus();
+				return false;
+			  }
+			});
+		
+			that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+			.on('keydown', function(e){
+			  if (e.which == 40){
+				that.$selectionUl.focus();
+				return false;
+			  }
+			});
+		  },
+		    afterSelect: function(values){
+				//$('.selectedVal').append(values+',');
+				this.qs1.cache();
+    			this.qs2.cache();
+		  	},
+			afterDeselect: function(){
+				this.qs1.cache();
+				this.qs2.cache();
+			  }
+		});
+		
+		$('.addNewMetric').on('click',function(){
+			var newRow = parseInt($('.metricRows').val()) + 1;
+			$('.metricRows').val(newRow);
+			var txt ='';
+			var txt = '<div class="twelve columns zero_pad"><div class="six columns left"><div class="five columns zero_pad left"><label>Metric Name: </label></div><div class="six columns zero_pad left"><input type="text" class="" name="kpi_metric" id="kpi_metric"></div></div></div>';
+			$('.newRowDiv').append(txt);
+		});
+		
+		$('.addNewScale').on('click',function(){
+			var newRow = parseInt($('.scaleRows').val()) + 1;
+			$('.scaleRows').val(newRow);
+			var txt ='';
+			var txt = '<div class="twelve columns zero_pad"><div class="six columns left"><div class="five columns zero_pad left"><label>Value: </label></div><div class="six columns zero_pad left"><input type="text"class="" name="scale_key'+newRow+'" id="scale_key'+newRow+'"></div></div><div class="six columns left"><div class="five columns zero_pad left"><label>Legend: </label></div><div class="six columns zero_pad left"><select name="" class="customSelect select90"><option value="">Select</option><option value="1">Disagree</option><option value="2">Ok</option><option value="3">Agree</option></select></div></div></div></div>';
+			$('.newsScaleRowDiv').append(txt);
+		});
+	});
+	
+	function showOrgMap(a){$('.extraKpidivs').hide();
+		if(a =='o'){ 
+			$('.orgMapDiv').fadeIn();
+		}else{ $('.orgMapDiv').fadeOut(); } 
+		}
+</script>
+</body>
+</html>

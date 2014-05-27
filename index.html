@@ -1,0 +1,146 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<link rel="shortcut icon" href="images/qcg_fav.png">
+<link rel="stylesheet" href="css/foundation.css" />
+<link rel="stylesheet" href="css/customstyle.css" />
+<link rel="stylesheet" href="css/login-style.css" />
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="css/ie-sucks.css" />
+<![endif]--> 
+<script src="js/modernizr.foundation.js"></script>
+<script src="js/jquery.js"></script>
+<link rel="stylesheet" href="css/responsive-fix.css" />
+<script type="text/javascript">
+	function forgot_pwd(){
+		$('.login-box').hide();
+		$('.forgotPwd-box').show();
+	}
+	
+	function checkUser(){
+		if($('.uname').val() == 'admin'){
+			window.location.href='admin/home.html';
+			}
+		else if($('.uname').val() == 'lm'){
+			window.location.href='lm/index.html';
+			}
+		else if($('.uname').val() == 'user'){
+			window.location.href='index.html';
+			}
+		//$('frmlogin').submit();
+		return false;
+		}
+	function validateEmail(){
+		var x=$('#email').val();
+		var atpos=x.indexOf("@");
+		var dotpos=x.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+		  {
+		  $('#errEmail').html('Invalid email.');
+		  return false;
+		  }else{ $('#errEmail').html('');  }
+		}
+</script>
+</head>
+<body id="bodybg">
+<div class="wrapperDiv">
+	
+    <div class="row">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="ten logoTitleDiv columns left zero_pad">
+                    <a href="javascript:void(0)" class="mgmLogo" id="showLeftPush"><img src="images/QCG.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt"><br/><br/><br/>
+                    <h4>Personal Evaluation &amp; Capability Assessment Tool</h4>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="row containerRow"><br/><br/><br/>
+    	<form name="frmlogin" action="#" class="frmlogin" method="post" onSubmit="return checkUser()" >
+        <div class="four columns loginbox" id="login_box">
+        	<div class="row">
+              <div class="twelve columns">
+                <label>Username</label>
+                <input type="text" name="username" class="uname" required value="" placeholder="Username" />
+              </div>
+              <div class="twelve columns">
+                <label>Password</label>
+                <input type="password" name="password" class="pwd" value="" placeholder="Password" />
+              </div>
+              <div class="twelve columns">
+                <input type="submit" class="button right" value="Login" />
+              </div>
+              <div class="twelve columns text-right">
+              	<br/>
+                <a href="javascript:void(0)" class="forgot_pwd remember left"><input class="rememberChk" type="checkbox">&nbsp;<span class="remText">Remember me!</span> </a>
+                <a href="javascript:void(0)" class="forgot_pwd forgotPwd right" onclick="forgot_pwd()">Forgot Password?</a><br>
+              </div>
+              
+            </div>
+     	</div>
+        </form>
+        <form name="frmlogin" class="frmlogin" method="post"  >
+        <div class="five columns loginbox floatNone forgotPwd-box hide">
+            <div class="row">
+                <div class="twelve columns">
+                    <p>Please enter your email for the password reset link.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="eight columns">
+                    <label>Email</label>
+                    <input type="email" id="email" required placeholder="Enter your e-mail id">
+                    <label class="error" id="errEmail"></label>
+                </div>
+                <div class="four columns">
+                    <label>&nbsp;</label>
+                    <a href="#" class="button twelve columns" onClick="validateEmail()">Mail it</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <p><a href="javascript:void(0)" class="back" id="cancelMail">Cancel </a></p>
+                </div>
+            </div>
+       </div>
+       </form>
+    </div>
+    <div class="row rd_footerDivrow">
+        <div class="twelve columns footerCntDiv">
+            <ul class="footer_ul">
+                    <li class="left">&copy; <a href="http://www.quadrant.gr/en/About-Us/Group-Presentation" target="_new">Quadrant Consulting Group </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    <script src="js/foundation.min.js"></script>
+    <script>
+      	$(document).foundation();
+		function forgot_pwd(){
+			$('#login_box').hide();
+			$('.forgotPwd-box').fadeIn();
+		}
+		$(document).ready(function(){
+			$('#cancelMail').on('click', function(){
+				$('.forgotPwd-box').hide();
+				$('#login_box').fadeIn();
+			});
+			$('.remText').on('click',function(){
+				if($('.rememberChk').is(":checked")){ $('.rememberChk').prop('checked',false) }
+				else{ $('.rememberChk').prop('checked',true); }
+			});
+		});
+	</script>
+	<script src="js/functions.js"></script>
+</body>
+</html>

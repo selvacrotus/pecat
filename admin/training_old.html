@@ -1,0 +1,885 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../css/jquery.treeview.css"/>
+<link rel="stylesheet" href="../css/fullcalendar.css" />
+<link rel="stylesheet" href="../css/shadowbox.css" />
+<link rel="stylesheet" href="../css/validationEngine.jquery.css" />
+<link rel="stylesheet" href="../css/customstyle.css" />
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]--> 
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.foundation.tabs.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/jquery.treeview.js"></script>
+<script src="../js/shadowbox.js"></script>
+<script src="../js/jquery.validationEngine.js"></script>
+<script src="../js/jquery.validationEngine-en.js"></script>
+<script src="../js/functions.js"></script>
+<script src="../js/fullcalendar.js"></script>
+<script type="text/javascript">
+	$(function() { 
+		$("#trainingForm").validationEngine('attach');
+    });
+</script>
+</head>
+<body>
+<div class="wrapperDiv">
+	<div class="row headerRow">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="twelve logoTitleDiv columns left zero_pad">
+                    <a href="index.html" class="mgmLogo" id="showLeftPush"><img src="../images/QCG.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt">
+                    <p>Welcome <b>Admin </b>
+                    <br/><small>Thu Mar 11, 2014</small>&nbsp;|&nbsp;<a href="../login.html">Logout</a>
+                    </p>
+                </div>
+                <div class="twelve columns zero_pad menuDiv"><br/><br/>
+                    <ul class="menuULLI">
+                        <li><a href="index.html">Employee</a></li>
+                        <li><a href="kpi.html">KPI</a></li>
+                        <li><a href="javascript:void(0)" class="active">Training</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="row containerRow">
+    	<div class="twelve columns employeesTblDiv">
+            <div class="twelve columns summaryForm zero_pad">
+            	<form name="trainingForm" id="trainingForm" class="formStyle" enctype="multipart/form-data">
+                <dl class="tabs">
+                	<dd class="active"><a href="#roadmap">Roadmap</a></dd>
+                    <dd class=""><a href="#materials">Materials</a></dd>
+                    <dd class=""><a href="#summaries">Summaries</a></dd>
+                    <dd class=""><a href="#add_tests">Add Question Bank</a></dd>
+                    <dd class=""><a href="#tests">Modify Question Bank</a></dd>
+                    <dd class=""><a href="#pre_tests">Preview Questions</a></dd>
+                    <dd class=""><a href="#accreditations">Accreditations</a></dd>
+                </dl>
+                
+                <ul class="tabs-content">
+                  <li class="active" id="roadmapTab">
+                      <div class="twelve columns zero_pad">
+                      	<div class="three columns zero_pad">
+                        	<div id="sidetreecontrol" class="twelve columns">
+                            	<a href="?#">Collapse All</a> | <a href="?#">Expand All</a>
+                            </div>
+                            <div class="twelve columns zero_pad">
+                            <ul class="ul_goals_main" id="tree">
+                                <li class="expandable"><div class="hitarea expandable-hitarea"></div><h6>Framework 1</h6>
+                                    <ul class="">
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                    </ul>
+                                </li>
+                                <li class="expandable"><div class="hitarea expandable-hitarea"></div><h6>Framework 2</h6>
+                                    <ul class="">
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                    </ul>
+                                </li>
+                                <li class="expandable"><div class="hitarea expandable-hitarea"></div><h6>Framework 3</h6>
+                                    <ul class="">
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                        <li><a href="javascript:void(0)" onClick="showRoadMap()">Road map</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                        <div class="nine columns zero_pad">
+                            <div class="twelve columns zero_pad hide eventsDiv">
+                                <div class="three columns zero_pad">
+                                    <label>KPI</label>
+                                    <select name="" class="customSelect left">
+                                        <option value="">Product Knowledge</option>
+                                        <option value="">Personal Grooming</option>
+                                        <option value="">Selling Skills</option>
+                                    </select>
+                                </div>
+                                <div class="three columns ">
+                                    <label>Training Program</label>
+                                    <select name="" class="customSelect left">
+                                        <option value="">L1 Beginner</option>
+                                        <option value="">L2 Intermediate</option>
+                                        <option value="">L3 Advanced</option>
+                                        <option value="">L4 Expert</option>
+                                        <option value="">L5 Trainer</option>
+                                    </select>
+                                </div>
+                                <div class="two columns left">
+                                    <label>Date</label>
+                                    <input type="text" class="validate[required,custom[date]]" id="trainDate">
+                                </div>
+                                
+                                <div class="four columns zero_pad left">
+                                    <label>Event</label>
+                                    <input type="text" class="validate[required]" id="">
+                                </div>
+                                <div class="twelve columns zero_pad left">
+                                    <label>Event URL</label>
+                                    <input type="text" class="nine columns left validate[required,custom[url]]" id="">
+                                    <input type="submit" class="button one zero_pad columns right eveCancel" onClick="addEvents('c')" value="Cancel">
+                                    <input type="submit" class="button one zero_pad columns right" value="Add">
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns zero_pad hide ccDiv">
+                                <div class="three columns zero_pad">
+                                    <label>KPI</label>
+                                    <select name="" class="customSelect left">
+                                        <option value="">Product Knowledge</option>
+                                        <option value="">Personal Grooming</option>
+                                        <option value="">Selling Skills</option>
+                                    </select>
+                                </div>
+                                <div class="three columns ">
+                                    <label>Company Codes</label>
+                                    <select name="" class="customSelect left">
+                                        <option value="">C1 Code of Conduct</option>
+                                        <option value="">C2 Commercial</option>
+                                        <option value="">C3 Integrity</option>
+                                        <option value="">C4 Anti Trust</option>
+                                    </select>
+                                </div>
+                                <div class="two columns left">
+                                    <label>Date</label>
+                                    <input type="text" class="validate[required,custom[date]]" id="ccDate">
+                                </div>
+                                
+                                <div class="four columns zero_pad left">
+                                    <label>Event</label>
+                                    <input type="text" class="validate[required]" id="">
+                                </div>
+                                <div class="twelve columns zero_pad left">
+                                    <label>Event URL</label>
+                                    <input type="text" class="nine columns left validate[required,custom[url]]" id="">
+                                    <input type="button" class="button one zero_pad columns right ccCancel" onClick="addCC('c')" value="Cancel">
+                                    <input type="submit" class="button one zero_pad columns right" value="Add">
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns zero_pad">
+                            <a href="javascript:void(0)" class="right addEvent" onClick="addEvents('a')"><span class="fi-plus"></span>&nbsp;Add Training Program</a>
+                            <a href="javascript:void(0)" class="right addCC" onClick="addCC('a')"><span class="fi-plus"></span>&nbsp;Add Company Codes&nbsp;&nbsp;&nbsp;</a>
+                            
+                            
+                            </div>
+                        	<div class="twelve columns right zero_pad roadMap1" id="calendar"></div>
+                        </div>
+                      </div>
+                  </li>
+                  
+                  <li id="materialsTab">
+                  	<div class="twelve columns zero_pad">
+                    	<div class="three columns zero_pad">
+                        	<div class="twelve columns zero_pad">
+                            <ul class="ul_goals_main materialsTabCnt" id="treeMate">
+                                <li class="expandable"><div class="hitarea expandable-hitarea"></div><h6>Personal Development</h6>
+                                    <ul class="">
+                                        <li><a href="javascript:void(0)" rel="l1">L1 Beginning</a></li>
+                                        <li><a href="javascript:void(0)" rel="l2">L2 Intermediate</a></li>
+                                        <li><a href="javascript:void(0)" rel="l3">L3 Advanced</a></li>
+                                        <li><a href="javascript:void(0)" rel="l4">L4 Expert</a></li>
+                                        <li><a href="javascript:void(0)" rel="l5">L5 Trainer</a></li>
+                                    </ul>
+                                </li>
+                                <li class="expandable"><div class="hitarea expandable-hitarea"></div><h6>Company Codes</h6>
+                                    <ul class="">
+                                        <li><a href="javascript:void(0)" rel="c1">C1 Code of Conduct</a></li>
+                                        <li><a href="javascript:void(0)" rel="c2">C2 Commercial</a></li>
+                                        <li><a href="javascript:void(0)" rel="c3">C3 Integrity</a></li>
+                                        <li><a href="javascript:void(0)" rel="c4">C4 Anti Trust</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                        <div class="nine columns zero_pad">
+                        	<div class="twelve columns right zero_pad tprogs">
+                            	<p id="l1" class=""><b>Beg 1 - </b><a href="http://www.quadrant.com/training/beginner/beginner.pdf">http://www.quadrant.com/training/beginner/beginner.pdf</a></p>
+                                <p id="l2" class=""><b>Int 2 - </b><a href="http://www.quadrant.com/training/beginner/intermediate.pdf">http://www.quadrant.com/training/beginner/intermediate.pdf</a></p>
+                                <p id="l3" class=""><b>Adv 3 - </b><a href="http://www.quadrant.com/training/beginner/advanced.pdf">http://www.quadrant.com/training/beginner/advanced.pdf</a></p>
+                                <p id="l4" class=""><b>Exp 4 - </b><a href="http://www.quadrant.com/training/beginner/expert.pdf">http://www.quadrant.com/training/beginner/expert.pdf</a></p>
+                                <p id="l5" class=""><b>Tra 5 - </b><a href="http://www.quadrant.com/training/beginner/trainer.pdf">http://www.quadrant.com/training/beginner/trainer.pdf</a></p>
+                                <hr>
+                                <p id="c1" class=""><b>C-Coc - </b><a href="http://www.quadrant.com/Codes/CoC">http://www.quadrant.com/Codes/CoC</a></p>
+                                <p id="c2" class=""><b>C-Com - </b><a href="http://www.quadrant.com/Codes/Commercial">http://www.quadrant.com/Codes/Commercial</a></p>
+                                <p id="c3" class=""><b>C-Int - </b><a href="http://www.quadrant.com/Codes/Integrity">http://www.quadrant.com/Codes/Integrity</a></p>
+                                <p id="c4" class=""><b>C-Ant - </b><a href="http://www.quadrant.com/Codes/Anti_trust">http://www.quadrant.com/Codes/Anti_trust</a></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                  
+                  <li id="summariesTab">
+                  	<div class="twelve columns zero_pad">
+                    	<div class="three columns zero_pad">
+                        	<div class="twelve columns zero_pad">
+                            <ul class="ul_goals_main summariesTabCnt" id="treeSummary">
+                                <li class="expandable"><div class="hitarea expandable-hitarea"></div><h6>Personal Development</h6>
+                                    <ul class="">
+                                        <li><a href="javascript:void(0)" rel="sl1">L1 Beginning</a></li>
+                                        <li><a href="javascript:void(0)" rel="sl2">L2 Intermediate</a></li>
+                                        <li><a href="javascript:void(0)" rel="sl3">L3 Advanced</a></li>
+                                        <li><a href="javascript:void(0)" rel="sl4">L4 Expert</a></li>
+                                        <li><a href="javascript:void(0)" rel="sl5">L5 Trainer</a></li>
+                                    </ul>
+                                </li>
+                                <li class="expandable"><div class="hitarea expandable-hitarea"></div><h6>Selling Skills</h6>
+                                    <ul class="">
+                                        <li><a href="javascript:void(0)" rel="sl1">L1 Beginning</a></li>
+                                        <li><a href="javascript:void(0)" rel="sl2">L2 Intermediate</a></li>
+                                        <li><a href="javascript:void(0)" rel="sl3">L3 Advanced</a></li>
+                                        <li><a href="javascript:void(0)" rel="sl4">L4 Expert</a></li>
+                                        <li><a href="javascript:void(0)" rel="sl5">L5 Trainer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                        <div class="nine columns zero_pad">
+                        	<div class="twelve columns right zero_pad beginingSum pdev" id="sl1"> 
+                            	<h5>Beginning</h5>                             
+                                <div class="responsiveTbl">
+                                <table cellpadding="0" cellspacing="0" class="">
+                                	<thead>
+                                    	<tr>
+                                        	<th width="200">Module Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr>
+                                        	<td>Module 1</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/beginner.pdf">Description 1</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 2</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/intermediate.pdf">Description 2</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 3</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Advanced.pdf">Description 3</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 4</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Expert.pdf">Description 4</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 5</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Trainer.pdf">Description 5</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns right zero_pad hide intermediateSum pdev" id="sl2"> 
+                            	<h5>Intermediate</h5>                             
+                                <div class="responsiveTbl">
+                                <table cellpadding="0" cellspacing="0" class="">
+                                	<thead>
+                                    	<tr>
+                                        	<th width="200">Module Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr>
+                                        	<td>Module 1</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/beginner.pdf">Description 1</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 2</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/intermediate.pdf">Description 2</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 3</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Advanced.pdf">Description 3</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 4</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Expert.pdf">Description 4</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 5</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Trainer.pdf">Description 5</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns right zero_pad hide advancedSum pdev" id="sl3"> 
+                            	<h5>Advanced</h5>                             
+                                <div class="responsiveTbl">
+                                <table cellpadding="0" cellspacing="0" class="">
+                                	<thead>
+                                    	<tr>
+                                        	<th width="200">Module Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr>
+                                        	<td>Module 1</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/beginner.pdf">Description 1</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 2</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/intermediate.pdf">Description 2</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 3</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Advanced.pdf">Description 3</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 4</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Expert.pdf">Description 4</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 5</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Trainer.pdf">Description 5</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns right zero_pad hide expertSum pdev" id="sl4"> 
+                            	<h5>Expert</h5>                             
+                                <div class="responsiveTbl">
+                                <table cellpadding="0" cellspacing="0" class="">
+                                	<thead>
+                                    	<tr>
+                                        	<th width="200">Module Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr>
+                                        	<td>Module 1</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/beginner.pdf">Description 1</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 2</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/intermediate.pdf">Description 2</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 3</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Advanced.pdf">Description 3</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 4</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Expert.pdf">Description 4</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 5</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Trainer.pdf">Description 5</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                            
+                            <div class="twelve columns right zero_pad hide trainerSum pdev" id="sl5"> 
+                            	<h5>Trainer</h5>                             
+                                <div class="responsiveTbl">
+                                <table cellpadding="0" cellspacing="0" class="">
+                                	<thead>
+                                    	<tr>
+                                        	<th width="200">Module Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr>
+                                        	<td>Module 1</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/beginner.pdf">Description 1</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 2</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/intermediate.pdf">Description 2</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 3</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Advanced.pdf">Description 3</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 4</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Expert.pdf">Description 4</a></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>Module 5</td>
+                                            <td><a href="http://www.quadrant.com/training/beginner/Trainer.pdf">Description 5</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </li>
+                  
+                  <li id="testsTab">
+                  	<div class="twelve columns zero_pad">
+                    	<div class="twelve columns zero_pad">
+                        	  <div class="three columns zero_pad">
+                                  <label>KPI</label>
+                                  <select name="" class="customSelect left">
+                                      <option value="">Product Knowledge</option>
+                                      <option value="">Personal Grooming</option>
+                                      <option value="">Selling Skills</option>
+                                  </select>
+                              </div>
+                              <div class="three columns ">
+                                  <label>Training Program</label>
+                                  <select name="" class="customSelect left">
+                                      <option value="">Beginner</option>
+                                      <option value="">Intermediate</option>
+                                      <option value="">Advanced</option>
+                                      <option value="">Expert</option>
+                                      <option value="">Trainer</option>
+                                  </select>
+                              </div>
+                              <div class="two columns left">
+                                  <label>Tests</label>
+                                  <select name="" class="customSelect left">
+                                      <option value="">Test 1</option>
+                                      <option value="">Test 2</option>
+                                      <option value="">Test 3</option>
+                                      <option value="">Test 4</option>
+                                      <option value="">Test 5</option>
+                                  </select>
+                              </div>
+                              <div class="three columns zero_pad left">
+                              	<label>&nbsp;</label>
+                              	<input type="button" class="button five columns prefix filterBtn" value="Search">
+                                <!--<a href="javascript:void(0)" class="button" rel="shadowbox;width=900">Preview</a>-->
+                              </div>
+                        </div>
+                    	<div class="twelve columns zero_pad">
+                            <div class="responsiveTbl">
+                            <table cellpadding="0" cellspacing="0" class="">
+                                <thead>
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Right Answer</th>
+                                    <th>Weight</th>
+                                    <th>Total</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Question 1</td>
+                                    <td>Answer 2</td>
+                                    <td>0.7</td>
+                                    <td>1</td>
+                                    <td><a href="edit_qa.html" rel="shadowbox;width=900;height=300" title="Edit Question"><span class="fi-pencil small grey"></span></a>&nbsp;&nbsp;<a href="javascript:void(0)" title="Delete"><span class="fi-x small darkred"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Question 2</td>
+                                    <td>Answer 3</td>
+                                    <td>0.9</td>
+                                    <td>1</td>
+                                    <td><a href="edit_qa.html" rel="shadowbox;width=900;height=300" title="Edit Question"><span class="fi-pencil small grey"></span></a>&nbsp;&nbsp;<a href="javascript:void(0)" title="Delete"><span class="fi-x small darkred"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Question 3</td>
+                                    <td>Answer 1</td>
+                                    <td>0.5</td>
+                                    <td>1</td>
+                                    <td><a href="edit_qa.html" rel="shadowbox;width=900;height=300" title="Edit Question"><span class="fi-pencil small grey"></span></a>&nbsp;&nbsp;<a href="javascript:void(0)" title="Delete"><span class="fi-x small darkred"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Question 4</td>
+                                    <td>Answer 4</td>
+                                    <td>0.6</td>
+                                    <td>1</td>
+                                    <td><a href="edit_qa.html" rel="shadowbox;width=900;height=300" title="Edit Question"><span class="fi-pencil small grey"></span></a>&nbsp;&nbsp;<a href="javascript:void(0)" title="Delete"><span class="fi-x small darkred"></span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Question 5</td>
+                                    <td>Answer 2</td>
+                                    <td>0.7</td>
+                                    <td>1</td>
+                                    <td><a href="edit_qa.html" rel="shadowbox;width=900;height=300" title="Edit Question"><span class="fi-pencil small grey"></span></a>&nbsp;&nbsp;<a href="javascript:void(0)" title="Delete"><span class="fi-x small darkred"></span></a></td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+                           	</div>
+                        </div>
+                    </div>
+                  </li>
+                  
+                  <li id="add_testsTab">
+                  	<div class="twelve columns zero_pad">
+                    	<div class="twelve columns zero_pad testsDiv">
+                          <div class="three columns zero_pad">
+                              <label>KPI</label>
+                              <select name="" class="customSelect left">
+                                  <option value="">Product Knowledge</option>
+                                  <option value="">Personal Grooming</option>
+                                  <option value="">Selling Skills</option>
+                              </select>
+                          </div>
+                          <div class="three columns ">
+                              <label>Training Program</label>
+                              <select name="" class="customSelect left">
+                                  <option value="">Beginner</option>
+                                  <option value="">Intermediate</option>
+                                  <option value="">Advanced</option>
+                                  <option value="">Expert</option>
+                                  <option value="">Trainer</option>
+                              </select>
+                          </div>
+                          <div class="two columns left">
+                              <label>Tests</label>
+                              <select name="" class="customSelect left">
+                                  <option value="">Test 1</option>
+                                  <option value="">Test 2</option>
+                                  <option value="">Test 3</option>
+                                  <option value="">Test 4</option>
+                                  <option value="">Test 5</option>
+                              </select>
+                          </div>
+                          
+                          <div class="twelve columns zero_pad ">
+                              <div class="four columns zero_pad ">
+                                  <label>Question</label>
+                                  <textarea rows="6" placeholder="type your question here" class="validate[required]"></textarea>
+                              </div>
+                              <div class="four columns">
+                                  <label>Answers</label>
+                                  <input type="text" placeholder="Answer 1" class="twelve columns left validate[required]" id="">
+                                  <input type="text" placeholder="Answer 2" class="twelve columns left validate[required]" id="">
+                                  <input type="text" placeholder="Answer 3" class="twelve columns left validate[required]" id="">
+                                  <input type="text" placeholder="Answer 4" class="twelve columns left validate[required]" id="">                         
+                              </div>
+                              <div class="four columns">
+                                  <label>Right Answer</label>
+                                  <input type="text" class="twelve columns left validate[required]" id="">
+                                  
+                                  <label class="four columns zero_pad">Weight</label>
+                                  <input type="text" class="two columns left validate[required]" id="">  
+                                  
+                                  <label class="four columns ">Total</label>
+                                  <input type="text" class="two columns left validate[required]" id="">                          
+                              </div>
+                          </div>
+                      </div>
+                      
+                      	<!--Add new Row Dynamically-->
+                        <div class="twelve columns zero_pad newRowDiv">
+                         	<input type="hidden" value="1" class="testQstRows" name="testQstRows">
+                        </div>
+                      	
+                        <div class="twelve columns zero_pad text-right">
+                        	<a href="javascript:void(0)" class="addNewTestQst"><span class="fi-plus"></span> Add more</a><br/><br/>
+                        </div>
+                        
+                        <div class="twelve columns zero_pad">
+                          <input type="submit" class="button one zero_pad columns right" value="Cancel">
+                          <input type="submit" class="button one zero_pad columns right" value="Add">
+                        </div>
+                      
+                    </div>
+                  </li>
+                  
+                  <li id="pre_testsTab">
+                  	<div class="twelve columns zero_pad">
+                    	<div class="three columns zero_pad">
+                            <label>KPI</label>
+                            <select name="" class="customSelect left">
+                                <option value="">Product Knowledge</option>
+                                <option value="">Personal Grooming</option>
+                                <option value="">Selling Skills</option>
+                            </select>
+                        </div>
+                        <div class="three columns ">
+                            <label>Training Program</label>
+                            <select name="" class="customSelect left">
+                                <option value="">Beginner</option>
+                                <option value="">Intermediate</option>
+                                <option value="">Advanced</option>
+                                <option value="">Expert</option>
+                                <option value="">Trainer</option>
+                            </select>
+                        </div>
+                        <div class="two columns left">
+                            <label>Tests</label>
+                            <select name="" class="customSelect left">
+                                <option value="">Test 1</option>
+                                <option value="">Test 2</option>
+                                <option value="">Test 3</option>
+                                <option value="">Test 4</option>
+                                <option value="">Test 5</option>
+                            </select>
+                        </div>
+                        <div class="three columns zero_pad left">
+                          <label>&nbsp;</label>
+                          <input type="button" class="button five columns prefix filterBtn" id="previewBtn" value="Preview">
+                        </div>
+                    </div>
+                    <div class="twelve columns zero_pad previewResults hide">
+                    	<fieldset>
+                        <div class="twelve columns zero_pad qaDivs">
+                            <ul>
+                                <li>Question 1</li>
+                                <ul class="answersUL">
+                                    <li>Answer 1</li>
+                                    <li>Answer 2</li>
+                                    <li>Answer 3</li>
+                                    <li>Answer 4</li>
+                                </ul>
+                            </ul>
+                            <br/>
+                            <p><b>Right Answer: </b> Answer 2</p>
+                        </div>
+                        <div class="twelve columns zero_pad qaDivs">
+                            <ul>
+                                <li>Question 2</li>
+                                <ul class="answersUL">
+                                    <li>Answer 1</li>
+                                    <li>Answer 2</li>
+                                    <li>Answer 3</li>
+                                    <li>Answer 4</li>
+                                </ul>
+                            </ul>
+                            <br/>
+                            <p><b>Right Answer: </b> Answer 1</p>
+                        </div>
+                        <div class="twelve columns zero_pad qaDivs">
+                            <ul>
+                                <li>Question 3</li>
+                                <ul class="answersUL">
+                                    <li>Answer 1</li>
+                                    <li>Answer 2</li>
+                                    <li>Answer 3</li>
+                                    <li>Answer 4</li>
+                                </ul>
+                            </ul>
+                            <br/>
+                            <p><b>Right Answer: </b> Answer 3</p>
+                        </div>
+                        <div class="twelve columns zero_pad qaDivs">
+                            <ul>
+                                <li>Question 4</li>
+                                <ul class="answersUL">
+                                    <li>Answer 1</li>
+                                    <li>Answer 2</li>
+                                    <li>Answer 3</li>
+                                    <li>Answer 4</li>
+                                </ul>
+                            </ul>
+                            <br/>
+                            <p><b>Right Answer: </b> Answer 2</p>
+                        </div>
+                        </fieldset>
+                    </div>
+                    
+                  </li>
+                  
+                  <li id="accreditationsTab">
+                  	<div class="twelve columns zero_pad">
+                    	<h5>Training &amp; Accreditations</h5>
+                        <div class="twelve columns zero_pad">
+                        	<div class="three columns zero_pad">
+                            <label>Role</label>
+                            <select name="" class="customSelect left">
+                                <option value="">Line Manager</option>
+                                <option value="">Associate</option>
+                            </select>
+                            </div>
+                            <div class="three columns  left">
+                            <label>Employee</label>
+                            <select name="" class="customSelect left">
+                                <option value="">Nicholas</option>
+                                <option value="">Josh</option>
+                                <option value="">John Doe</option>
+                                <option value="">Sally Doe</option>
+                                <option value="">Raiyan</option>
+                                <option value="">Mike Doe</option>
+                                <option value="">Gerry</option>
+                            </select>
+                            </div>
+                            <div class="three columns zero_pad left">
+                              <label>&nbsp;</label>
+                              <input type="button" class="button five columns prefix filterBtn" id="previewBtn" value="Search">
+                            </div>
+                        </div>
+                        <div class="twelve columns zero_pad trainingAccTbls">
+                            <div class="four columns zero_pad">
+                            	<div class="responsiveTbl">
+                                    <table cellpadding="0" cellspacing="0" class="">
+                                        <tr>
+                                            <th>Beginning (L1)</th><td><input type="checkbox" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Intermediate (L2)</th><td><input type="checkbox" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Advanced (L3)</th><td><input type="checkbox" value=""></td>
+                                         </tr>
+                                        <tr>
+                                            <th>Expert (L4)</th><td><input type="checkbox" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Trainer (L5)</th><td><input type="checkbox" value=""></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="four columns left ">
+                                <div class="responsiveTbl">
+                                    <table cellpadding="0" cellspacing="0" class="">
+                                        <tr>
+                                            <th>Code of Conduct (C1)</th><td><input type="checkbox" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Commercial (C2)</th><td><input type="checkbox" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Integrity (C3)</th><td><input type="checkbox" value=""></td>
+                                         </tr>
+                                        <tr>
+                                            <th>Antil Trust (C4)</th><td><input type="checkbox" value=""></td>
+                                        </tr>
+                                        <tr>
+                                            <th>&nbsp;</th><td>&nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="twelve columns zero_pad left">
+                                  <input type="button" class="button three right columns prefix filterBtn " id="previewBtn" value="Save">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                  </li>
+                  
+                </ul>
+                </form>
+            </div>
+        </div>
+    </div><!--containerRow End-->
+    
+    <div class="row rd_footerDivrow">
+        <div class="twelve columns footerCntDiv">
+            <ul class="footer_ul">
+                    <li class="left">&copy; <a href="javascript:void(0)" target="_new">Quadrant Consulting Group </a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript">
+	$(document).foundationTabs();
+	function showRoadMap(){}
+	function addEvents(a){
+		if(a =='a'){$('.eventsDiv, .eveCancel').fadeIn(); $('.addEvent, .addCC').hide() }
+		else{ $('.eventsDiv, .eveCancel').hide(); $('.addEvent, .addCC').fadeIn(); }
+		}
+	function addCC(a){
+		if(a =='a'){$('.ccDiv, .ccCancel').fadeIn(); $('.addEvent, .addCC').hide() }
+		else{ $('.ccDiv, .ccCancel').hide(); $('.addEvent, .addCC').fadeIn(); }
+		}
+	$(document).ready(function(){
+		
+		$("#tree, #treeSummary").treeview({
+			collapsed: true,
+			animated: "fast",
+			control:"#sidetreecontrol",
+			prerendered: false,
+			persist: "location"
+		});
+		$("#treeMate").treeview({
+			collapsed: true,
+			animated: "fast",
+			control:"#sidetreecontrol",
+			prerendered: true,
+			persist: "location"
+		});
+		$('#calendar').fullCalendar({
+			events: [
+				{
+					title  : 'event1',
+					start  : '2014-03-11'
+				},
+				{
+					title  : 'event2',
+					start  : '2014-03-15',
+					end    : '2014-03-17'
+				},
+				{
+					title  : 'event3',
+					start  : '2014-03-21 12:30:00',
+					allDay : false // will make the time show
+				}
+			]
+		});
+		
+		$('.materialsTabCnt li ul li a').on('click', function(){
+			var p = $(this).attr('rel');
+			$('.tprogs p').css('font-size','13px');
+			$('.tprogs p#'+p).css('font-size','20px');
+		});
+		$('.summariesTabCnt li ul li a').on('click', function(){
+			var p = $(this).attr('rel');
+			$('.pdev').hide();
+			$('#'+p).fadeIn();
+		});
+		$( "#trainDate, #ccDate" ).datepicker({
+			dateFormat: 'yy-mm-dd'
+			});
+		
+		$('#previewBtn').on('click',function(){
+			$('.previewResults').fadeIn();
+		});
+		
+		Shadowbox.init({
+			title: ""
+			});
+		
+		$('.addNewTestQst').on('click',function(){
+			var newRow = parseInt($('.testQstRows').val()) + 1;
+			$('.testQstRows').val(newRow);
+			var txt ='';
+			var txt = '<hr><div class="twelve columns zero_pad testsDiv"><div class="three columns zero_pad"><label>KPI</label><select name="" class="customSelect left"><option value="">Product Knowledge</option><option value="">Personal Grooming</option><option value="">Selling Skills</option></select></div><div class="three columns "><label>Training Program</label><select name="" class="customSelect left"><option value="">Beginner</option><option value="">Intermediate</option><option value="">Advanced</option><option value="">Expert</option><option value="">Trainer</option></select></div><div class="two columns left"><label>Tests</label><select name="" class="customSelect left"><option value="">Test 1</option><option value="">Test 2</option><option value="">Test 3</option><option value="">Test 4</option><option value="">Test 5</option></select></div><div class="twelve columns zero_pad "><div class="four columns zero_pad "><label>Question</label><textarea rows="6" placeholder="type your question here" class="validate[required]"></textarea></div><div class="four columns"><label>Answers</label><input type="text" placeholder="Answer 1" class="twelve columns left validate[required]" id=""><input type="text" placeholder="Answer 2" class="twelve columns left validate[required]" id=""><input type="text" placeholder="Answer 3" class="twelve columns left validate[required]" id=""><input type="text" placeholder="Answer 4" class="twelve columns left validate[required]" id="">   </div><div class="four columns"><label>Right Answer</label><input type="text" class="twelve columns left validate[required]" id=""><label class="four columns zero_pad">Weight</label><input type="text" class="two columns left validate[required]" id="">  <label class="four columns ">Total</label><input type="text" class="two columns left validate[required]" id=""></div></div>  </div>';
+			$('.newRowDiv').append(txt);
+		});
+	});
+</script>
+</body>
+</html>

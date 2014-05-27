@@ -1,0 +1,44 @@
+/* CSS Document */
+body {
+  background: url("../images/gray_jean.png"); }
+/*.containerRow{ background: url("../images/pm_bg3.jpg") !important; background-size:100% 100% }*/
+.zero_pad {
+  padding: 0 !important; }
+
+.zero_lpad {
+  padding-left: 0 !important; }
+
+.zero_rpad {
+  padding-right: 0 !important; }
+
+.loginbox {
+  margin: 0 auto;
+  float: none !important;
+  padding: 20px 20px 20px 20px;
+  -moz-box-shadow: 0 0 3px #CCCCCC;
+  -webkit-box-shadow: 0 0 3px #CCCCCC;
+  box-shadow: 0 0 3px #CCCCCC;
+  background: #fff; line-height:2em }
+.loginbox a.button{ padding:9.5px 10px !important }
+.logoTxt {
+  margin: 100px auto 0 auto;
+  float: none !important;
+ }
+.forgotPwd {}
+  .logoTxt h3 {
+    color: white; }
+
+.plLogo {
+  margin-bottom: 20px; }
+
+.loginbox a { }
+
+.back{ } 
+/*#content,#footer{ background:none; border:none}
+.footerCntDiv{ position:fixed; bottom:5px; left:5%; width:90%; } 
+.footer_ul li{ list-style-type:none; }
+.footer_ul li a{ font-size:.9em }*/
+#header h2{ margin-top:10px }
+.logoTitle {    color: #FFFFFF;    float: right;    font-size: 30px;    position: relative;    text-shadow: 0 0 3px #333333;    top: 10px}
+.login-box label{ font-weight:600 }
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"]{ height:35px !important  }

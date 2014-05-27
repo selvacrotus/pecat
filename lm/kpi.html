@@ -1,0 +1,710 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PECAT - Personal Evaluation &amp; Capability Assessment Tool</title>
+<link rel="shortcut icon" href="../images/qcg_fav.png">
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="../css/ie-sucks.css" />
+<![endif]--> 
+<link rel="stylesheet" href="../css/foundation.css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" href="../foundation-icons/foundation-icons.css" />
+<link rel="stylesheet" href="../css/multi-select.css">
+<!--<link rel="stylesheet" href="../css/jquery.multiselect2side.css" />-->
+<link rel="stylesheet" href="../css/vallenato.css">
+<link rel="stylesheet" href="../css/shadowbox.css">
+<link rel="stylesheet" href="../css/customstyle.css" />
+
+<link rel="stylesheet" href="../css/responsive-fix.css" />
+<script src="../js/modernizr.foundation.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/vallenato.js"></script>
+<script src="../js/shadowbox.js"></script>
+<script src="../js/jquery.multi-select.js"></script>
+<script src="../js/jquery.quicksearch.js"></script>
+<!--<script src="../js/jquery.multiselect2side.js"></script>-->
+<script src="../js/functions.js"></script>
+</head>
+<body id="bodybg">
+<div class="wrapperDiv">
+	<div class="row headerRow">
+        <div class="panel twelve columns headerDiv">
+            <div class="four columns logoDiv">
+                <div class="twelve logoTitleDiv columns left zero_pad">
+                    <a href="index.html" class="mgmLogo" id="showLeftPush"><img src="../images/CrotusLogo.png"></a>
+                </div>
+            </div>
+            <div class="eight columns right userInfo">
+                <div class="twelve columns zero_pad text-right userTxt"><br/><br/>
+                    <p class="eleven columns">Welcome <b><a href="profile.html" class="ipadRes" rel="shadowbox;width=700;height=550">Tom Smith</a></b>
+                    <br/><small>Thu Mar 11, 2014</small>&nbsp;|&nbsp;<a href="../login.html">Logout</a>
+                    </p>
+                    <p class="one columns zero_pad"><img src="../images/user.jpg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="twelve columns right menuDivTop">
+            <div class="twelve columns zero_pad menuDiv">
+                <ul class="menuULLI">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="kpi.html" class="active">KPI</a></li>
+                  <li><a href="training.html">Training</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	<div class="row containerRow">
+    	<div class="twelve columns employeesTblDiv">
+            <div class="twelve columns employeeForm zero_pad">
+               
+               <div id="accordion-container"> 
+                 <h2 class="accordion-header">Hierarchy Filter</h2> 
+                 <div class="accordion-content"> 
+                	<div class="twelve columns zero_pad orgMapDiv">
+                      <div class="twelve columns zero_pad">    
+                          <label class="two columns">Global: </label>
+                          <select name="" class="customSelect two columns left">
+                              <option value="">Select</option>
+                              <option value="">QCG Global</option>
+                          </select>
+                          
+                          <label class="two columns">Region: </label>
+                          <select name="" class="customSelect two columns left">
+                              <option value="">Select</option>
+                              <option value="">Europe</option>
+                              <option value="">North America</option>
+                              <option value="">Asia</option>
+                          </select>
+                          
+                          <label class="two columns">Country/Market: </label>
+                          <select name="" class="customSelect two columns left">
+                              <option value="">Select</option>
+                              <option value="">France</option>
+                              <option value="">UK</option>
+                          </select>
+                          
+                          <label class="two columns">Channel: </label>
+                          <select name="" class="customSelect two columns left">
+                              <option value="">Select</option>
+                              <option value="">Travel</option>
+                              <option value="">In-Store</option>
+                          </select>
+                          
+                          <label class="two columns">Hub: </label>
+                          <select name="" class="customSelect two columns left">
+                              <option value="">Select</option>
+                              <option value="">Heathrow T5</option>
+                              <option value="">Heathrow T4</option>
+                              <option value="">Heathrow T3</option>
+                              <option value="">Heathrow T2</option>
+                              <option value="">Heathrow T1</option>
+                          </select>
+                          
+                          <label class="two columns">Location: </label>
+                          <select name="" class="customSelect two columns left">
+                              <option value="">Select</option>
+                              <option value="">T5 Departures</option>
+                              <option value="">T5 Arrivals</option>
+                          </select>
+                     </div>
+                     <div class="twelve columns zero_pad">    
+                          <label class="two columns">Sub-Location: </label>
+                          <select name="" class="customSelect two columns left">
+                              <option value="">Select</option>
+                              <option value="">Departure Lounge</option>
+                              <option value="">Departure Gates 5-25</option>
+                          </select>
+                     </div>
+                     
+                     <div class="twelve columns zero_pad"> 
+                        <label class="two columns">&nbsp; </label>
+                        <input type="button" class="button one columns left" value="Filter">
+                        <input type="reset" class="button one columns left" value="Reset">
+                     </div>
+                    </div> 
+                 </div>
+                 
+				 <h2 class="accordion-header">Employee Selection</h2> 
+                 <div class="accordion-content">
+                	<div class="twelve columns zero_pad">
+                       <div class="two columns zero_pad">
+                          <label class="twelve columns left">Employee: </label>
+                       </div>
+                       <div class="eight columns zero_pad empMultiSelect left">
+                          <select name="emps[]" multiple class="customSelect two columns left multiSelect">
+                              <option value="emp1">Employee 1</option>
+                              <option value="emp2">Employee 2</option>
+                              <option value="emp3">Employee 3</option>
+                              <option value="emp4">Employee 4</option>
+                          </select>
+                       </div>
+                       
+                   </div>
+               	 </div>
+                 
+				 <h2 class="accordion-header">Preview KPI</h2> 
+                 <div class="accordion-content">
+                    <div class="twelve columns">
+                    	<div class="twelve columns zero_pad">
+                            <div class="two columns zero_pad">
+                              <label class="twelve columns zero_pad left">KPI Group: </label>
+                            </div>
+                            <div class="five columns zero_pad left">   
+                              <select name="" class="customSelect eight columns left">
+                                  <option value="">Select</option>
+                                  <option value="">Group 1</option>
+                                  <option value="">Group 2</option>
+                                  <option value="">Group 3</option>
+                                  <option value="">Group 4</option>
+                              </select>
+                           </div>
+                        </div>
+                        
+                      <div class="twelve columns zero_pad">
+                          <div class="eight columns zero_pad left">
+                              <div class="responsiveTbl">
+                              <table cellpadding="0" cellspacing="0" class="customTbl kpitbl">
+                                  <thead>
+                                    <th width="150">KPI Name</th>
+                                    <th>Metric</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                    <td>Product Knowledge</td>
+                                    <td><b>Metric 1</b></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Metric 2</b></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Metric 3</b></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Metric 4</b></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Competitor</b></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="7">&nbsp;</td>
+                                    <td width="80"><input type="text" name="" value=""></td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                              </div>
+                              <div class="twelve columns commnetsFld zero_pad right">
+                              <fieldset>
+                                <div class="two columns"><label>Comments</label></div>
+                                <div class="ten columns"><textarea rows="1" class="twelve columns" placeholder="text"></textarea></div>
+                              </fieldset>
+                              </div>
+                          </div>
+                          <div class="three columns legendFld right">
+                              <b>Legend</b>
+                              <ul>
+                                  <li>1 - Unsatisfactory</li>
+                                  <li>2 - Below Expectations</li>
+                                  <li>3 - Mostly Meets Expectations</li>
+                                  <li>4 - Fully Meets Expectations</li>
+                                  <li>5 - Exceeds Expectations</li>
+                                  <li>6 - Not Applicable</li>
+                              </ul>
+                          </div>
+                      </div>
+                      
+                      <div class="twelve columns zero_pad">
+                          <div class="eight columns zero_pad left">
+                              <div class="responsiveTbl">
+                              <table cellpadding="0" cellspacing="0" class="customTbl kpitbl">
+                                  <thead>
+                                    <th width="150">KPI Name</th>
+                                    <th>Metric</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                    <td>Selling Skills</td>
+                                    <td><b>Greeting</b></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Clarifying Needs</b></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Establishing report</b></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Create need/want</b></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Benefits</b></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Closure</b></td>
+                                    <td><input type="radio" name="widget6" value=""></td>
+                                    <td><input type="radio" name="widget6" value=""></td>
+                                    <td><input type="radio" name="widget6" value=""></td>
+                                    <td><input type="radio" name="widget6" value=""></td>
+                                    <td><input type="radio" name="widget6" value=""></td>
+                                    <td><input type="radio" name="widget6" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Objections</b></td>
+                                    <td><input type="radio" name="widget7" value=""></td>
+                                    <td><input type="radio" name="widget7" value=""></td>
+                                    <td><input type="radio" name="widget7" value=""></td>
+                                    <td><input type="radio" name="widget7" value=""></td>
+                                    <td><input type="radio" name="widget7" value=""></td>
+                                    <td><input type="radio" name="widget7" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="7">&nbsp;</td>
+                                    <td width="80"><input type="text" name="" value=""></td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                              </div>
+                              <div class="twelve columns commnetsFld zero_pad right">
+                              <fieldset>
+                                <div class="two columns"><label>Comments</label></div>
+                                <div class="ten columns"><textarea rows="1" class="twelve columns" placeholder="text"></textarea></div>
+                              </fieldset>
+                              </div>
+                          </div>
+                          <div class="three columns legendFld right">
+                              <b>Legend</b>
+                              <ul>
+                                  <li>1 - Unsatisfactory</li>
+                                  <li>2 - Below Expectations</li>
+                                  <li>3 - Mostly Meets Expectations</li>
+                                  <li>4 - Fully Meets Expectations</li>
+                                  <li>5 - Exceeds Expectations</li>
+                                  <li>6 - Not Applicable</li>
+                              </ul>
+                          </div>
+                      </div>
+                      
+                      <div class="twelve columns zero_pad">
+                          <div class="eight columns zero_pad left">
+                              <div class="responsiveTbl">
+                              <table cellpadding="0" cellspacing="0" class="customTbl kpitbl">
+                                  <thead>
+                                    <th width="150">KPI Name</th>
+                                    <th>Metric</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                    <td>Personal Grooming</td>
+                                    <td><b>Clothing/attire</b></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Face</b></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Hair</b></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Hands</b></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Company Identity</b></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="7">&nbsp;</td>
+                                    <td width="80"><input type="text" name="" value=""></td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                              </div>
+                              <div class="twelve columns commnetsFld zero_pad right">
+                              <fieldset>
+                                <div class="two columns"><label>Comments</label></div>
+                                <div class="ten columns"><textarea rows="1" class="twelve columns" placeholder="text"></textarea></div>
+                              </fieldset>
+                              </div>
+                          </div>
+                          <div class="three columns legendFld right">
+                              <b>Legend</b>
+                              <ul>
+                                  <li>1 - Below Expectations</li>
+                                  <li>2 - Mostly Meets Expectations</li>
+                                  <li>3 - Fully Meets Expectations</li>
+                                  <li>4 - Exceeds Expectations</li>
+                                  <li>5 - Not Applicable</li>
+                              </ul>
+                          </div>
+                      </div>
+                      
+                      <div class="twelve columns zero_pad">
+                          <div class="eight columns zero_pad left">
+                              <div class="responsiveTbl">
+                              <table cellpadding="0" cellspacing="0" class="customTbl kpitbl">
+                                  <thead>
+                                    <th width="150">KPI Name</th>
+                                    <th>Metric</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                    <td>Merchandising</td>
+                                    <td><b>Pricing Hierarchy</b></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Planogram</b></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Presentation</b></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Stockweight</b></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Promotion</b></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                    <td width="80"><input type="text" name="" value=""></td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                              </div>
+                              <div class="twelve columns commnetsFld zero_pad right">
+                              <fieldset>
+                                <div class="two columns"><label>Comments</label></div>
+                                <div class="ten columns"><textarea rows="1" class="twelve columns" placeholder="text"></textarea></div>
+                              </fieldset>
+                              </div>
+                          </div>
+                          <div class="three columns legendFld right">
+                              <b>Legend</b>
+                              <ul>
+                                  <li>1 - Aware of Standards</li>
+                                  <li>2 - Displays Understading of Principles</li>
+                                  <li>3 - Actively ensure principles are delivered</li>
+                                  <li>4 - Influences &amp; exceeds company expectations</li>
+                                  <li>5 - Not Applicable</li>
+                              </ul>
+                          </div>
+                      </div>
+                      
+                      <div class="twelve columns zero_pad">
+                          <div class="eight columns zero_pad left">
+                              <div class="responsiveTbl">
+                              <table cellpadding="0" cellspacing="0" class="customTbl kpitbl">
+                                  <thead>
+                                    <th width="150">KPI Name</th>
+                                    <th>Metric</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                  </thead>
+                                  <tbody>
+                                  <tr>
+                                    <td>Corporate Policies</td>
+                                    <td><b>Health Safety</b></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                    <td><input type="radio" name="widget1" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Pricing Integrity</b></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                    <td><input type="radio" name="widget2" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Display &amp; Merchandising</b></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                    <td><input type="radio" name="widget3" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Information Privacy</b></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                    <td><input type="radio" name="widget4" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td><b>Conflict of Interest</b></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                    <td><input type="radio" name="widget5" value=""></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                    <td width="80"><input type="text" name="" value=""></td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                              </div>
+                              
+                              <div class="twelve columns commnetsFld zero_pad right">
+                              <fieldset>
+                                <div class="two columns"><label>Comments</label></div>
+                                <div class="ten columns"><textarea rows="1" class="twelve columns" placeholder="text"></textarea></div>
+                              </fieldset>
+                              </div>
+                          </div>
+                          <div class="three columns legendFld right">
+                              <b>Legend</b>
+                              <ul>
+                                  <li>1 - No Awareness</li>
+                                  <li>2 - Basic Awareness</li>
+                                  <li>3 - Full Awareness</li>
+                                  <li>4 - Fully Aware and coaches others</li>
+                                  <li>5 - Not Applicable</li>
+                              </ul>
+                          </div>
+                      </div>
+                      
+                      <div class="twelve columns zero_pad"><br/><br/>
+                          <input type="submit" name="submit" class="button one columns zero_pad left" value="Calculate">
+                          <input type="submit" name="submit" class="button one columns zero_pad left" value="Save">
+                          <input type="button" name="cancel" class="button one columns zero_pad left" onClick="window.location.href='kpi.html'" value="Cancel">
+                      </div>
+                      
+                  </div>
+              	 </div>
+               </div><!--accordion-container End-->
+               
+            </div>
+        </div>
+    </div><!--containerRow End-->
+    
+    <div class="row rd_footerDivrow">
+        <div class="twelve columns footerCntDiv">
+            <ul class="footer_ul">
+                    <li class="left">&copy; <a href="javascript:void(0)" target="_new">Quadrant Consulting Group </a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		Shadowbox.init();
+		$( ".startDate, .endDate" ).datepicker({
+			dateFormat: 'yy-mm-dd'
+			});
+	});
+	
+	/*$(".multiSelect").multiselect2side({
+			moveOptions: false,
+		});*/
+		
+	$('.multiSelect').multiSelect({
+		  selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+		  selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder=''>",
+		  afterInit: function(ms){
+			var that = this,
+				$selectableSearch = that.$selectableUl.prev(),
+				$selectionSearch = that.$selectionUl.prev(),
+				selectableSearchString = '.'+that.$container.attr('class')+' .ms-elem-selectable:not(.ms-selected)',
+				selectionSearchString = '.'+that.$container.attr('class')+' .ms-elem-selection.ms-selected';
+		
+			that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+			.on('keydown', function(e){
+			  if (e.which === 40){
+				that.$selectableUl.focus();
+				return false;
+			  }
+			});
+		
+			that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+			.on('keydown', function(e){
+			  if (e.which == 40){
+				that.$selectionUl.focus();
+				return false;
+			  }
+			});
+		  },
+		    afterSelect: function(values){
+				//$('.selectedVal').append(values+',');
+				this.qs1.cache();
+    			this.qs2.cache();
+		  	},
+			afterDeselect: function(){
+				this.qs1.cache();
+				this.qs2.cache();
+			  }
+		});
+</script>
+</body>
+</html>
